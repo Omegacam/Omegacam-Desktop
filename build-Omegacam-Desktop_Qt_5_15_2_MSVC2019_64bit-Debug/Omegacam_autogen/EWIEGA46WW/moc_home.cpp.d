@@ -78,7 +78,11 @@ D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam/Omegacam-Wind
   O:/Qt/5.15.2/msvc2019_64/include/QtGui/qwindowdefs.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtGui/qwindowdefs_win.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QMainWindow \
+  O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QScrollArea \
+  O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qabstractscrollarea.h \
+  O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qframe.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qmainwindow.h \
+  O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qscrollarea.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qsizepolicy.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qtabwidget.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qtwidgets-config.h \

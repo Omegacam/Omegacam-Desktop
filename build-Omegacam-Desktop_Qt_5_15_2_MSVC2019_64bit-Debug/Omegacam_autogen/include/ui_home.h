@@ -13,7 +13,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -23,7 +22,6 @@ class Ui_home
 {
 public:
     QWidget *centralwidget;
-    QPushButton *okButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -31,17 +29,15 @@ public:
     {
         if (home->objectName().isEmpty())
             home->setObjectName(QString::fromUtf8("home"));
-        home->resize(800, 600);
+        home->resize(925, 590);
+        home->setMinimumSize(QSize(500, 400));
         home->setAutoFillBackground(false);
         centralwidget = new QWidget(home);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        okButton = new QPushButton(centralwidget);
-        okButton->setObjectName(QString::fromUtf8("okButton"));
-        okButton->setGeometry(QRect(270, 230, 201, 91));
         home->setCentralWidget(centralwidget);
         menubar = new QMenuBar(home);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 925, 20));
         home->setMenuBar(menubar);
         statusbar = new QStatusBar(home);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -55,7 +51,6 @@ public:
     void retranslateUi(QMainWindow *home)
     {
         home->setWindowTitle(QCoreApplication::translate("home", "home", nullptr));
-        okButton->setText(QCoreApplication::translate("home", "Click Here", nullptr));
     } // retranslateUi
 
 };
