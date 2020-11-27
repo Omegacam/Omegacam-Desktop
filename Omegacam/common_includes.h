@@ -6,7 +6,10 @@
 #include <QDebug>
 #include <QScrollArea>
 #include <QVBoxLayout>
+#include <QColor>
 #include <vector>
 #include <string>
+
+#include "options.h"
 
 #endif // COMMON_INCLUDES_H

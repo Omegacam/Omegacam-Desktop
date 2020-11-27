@@ -7,35 +7,23 @@
 
 home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     ui->setupUi(this);
-    rightScrollAreaWidth = getRootWindowSize().height() * rightScrollAreaWidthRatio;
+    rightScrollAreaWidth = this->size().height() * rightScrollAreaWidthRatio;
+    rightScrollArea = new QScrollArea(this);
 
-    QPalette p;
-    p.setColor(QPalette::Background, Qt::blue);
-    rightScrollArea->setAutoFillBackground(true);
-    rightScrollArea->setGeometry(getRootWindowSize().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, getRootWindowSize().height());
-    rightScrollArea->setPalette(p);
+    rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
 
     CameraListWidget *cameraList = new CameraListWidget(rightScrollArea);
 
-    //cameraList->size
     rightScrollArea->setWidget(cameraList);
     rightScrollArea->setWidgetResizable(true);
-    rightScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    rightScrollArea->show();
-}
 
-QSize home::getRootWindowSize(){
-    return this->size();
-}
-
-void home::buttonClicked(){
-    //qInfo() << "clicked" << endl;
+    //rightScrollArea->show();
 }
 
 void home::resizeEvent(QResizeEvent*){
     //qInfo() << "resize: " << getRootWindowSize();
-    rightScrollAreaWidth = getRootWindowSize().height() * rightScrollAreaWidthRatio;
-    rightScrollArea->setGeometry(getRootWindowSize().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, getRootWindowSize().height());
+    rightScrollAreaWidth = this->size().height() * rightScrollAreaWidthRatio;
+    rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
     //rightScrollArea->widget()->resize(rightScrollArea->size().width(), rightScrollArea->size().height());
 }
 

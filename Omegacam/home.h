@@ -15,15 +15,14 @@ public:
     home(QWidget *parent = nullptr);
     ~home();
 
-    void buttonClicked();
-    QSize getRootWindowSize();
+    //void buttonClicked();
 
 private:
     Ui::home *ui;
 
-    float rightScrollAreaWidthRatio = 0.35;
+    double rightScrollAreaWidthRatio = 0.35;
     int rightScrollAreaWidth = 0;
-    QScrollArea* rightScrollArea = new QScrollArea(this);
+    QScrollArea* rightScrollArea = nullptr;
 
     void resizeEvent(QResizeEvent*);
 };
