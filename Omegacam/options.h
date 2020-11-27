@@ -1,8 +1,8 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
-#define primaryBackgroundColor Qt::black
-//#define secondaryBackgroundColor QColor::fromRgb(255, 255, 255)
-#define secondaryBackgroundColor Qt::black
+#define primaryBackgroundColor QColor::fromRgb(66, 66, 66)
+#define secondaryBackgroundColor QColor::fromRgb(97, 97, 97)
+//#define secondaryBackgroundColor Qt::black
 
 #endif // OPTIONS_H

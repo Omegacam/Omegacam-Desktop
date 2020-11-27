@@ -6,7 +6,9 @@
 #include <QDebug>
 #include <QScrollArea>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QColor>
+#include <QLabel>
 #include <vector>
 #include <string>
 

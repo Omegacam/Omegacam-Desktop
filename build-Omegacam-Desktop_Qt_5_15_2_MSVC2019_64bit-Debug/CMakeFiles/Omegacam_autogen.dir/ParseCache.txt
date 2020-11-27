@@ -95,6 +95,7 @@ D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windo
  mmc:Q_OBJECT
  mdp:D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/cameralistwidget.h
  mdp:D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/common_includes.h
+ mdp:D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/home.h
  mdp:D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/options.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtCore/QDebug
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtCore/qalgorithms.h
@@ -189,6 +190,9 @@ D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windo
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtGui/qwindowdefs.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtGui/qwindowdefs_win.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QApplication
+ mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QHBoxLayout
+ mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QLabel
+ mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QMainWindow
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QPushButton
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QScrollArea
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QVBoxLayout
@@ -199,11 +203,14 @@ D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windo
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qboxlayout.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qframe.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qgridlayout.h
+ mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qlabel.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qlayout.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qlayoutitem.h
+ mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qmainwindow.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qpushbutton.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qscrollarea.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qsizepolicy.h
+ mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qtabwidget.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qtwidgets-config.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qwidget.h

@@ -7,9 +7,10 @@ int main(int argc, char *argv[]){
     home w;
     w.setWindowTitle("Omegacam");
     QPalette homeP;
-    homeP.setColor(QPalette::Background, primaryBackgroundColor);
+    homeP.setColor(QPalette::Window, primaryBackgroundColor);
     w.setAutoFillBackground(true);
     w.setPalette(homeP);
     w.show();
+    //w.rightScrollArea->widget();
     return a.exec();
 }

@@ -3,16 +3,17 @@
 
 #include <QWidget>
 #include "common_includes.h"
+#include "home.h"
 
 class CameraListWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CameraListWidget(QWidget *parent = nullptr);
+    explicit CameraListWidget(QWidget *parent = nullptr, home *rootparent = nullptr);
     ~CameraListWidget();
 
 private:
-    QPushButton* CreateChildButton(int num);
+    QPushButton* CreateChildButton(int num, home *rootparent, QVBoxLayout *layout);
     QWidget* parentptr = nullptr;
 
     void resizeEvent(QResizeEvent*);

@@ -100,6 +100,8 @@ Omegacam_autogen/timestamp: \
 	O:/Qt/5.15.2/msvc2019_64/include/QtGui/qwindowdefs.h \
 	O:/Qt/5.15.2/msvc2019_64/include/QtGui/qwindowdefs_win.h \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QApplication \
+	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QHBoxLayout \
+	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QLabel \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QMainWindow \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QPushButton \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/QScrollArea \
@@ -111,6 +113,7 @@ Omegacam_autogen/timestamp: \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qboxlayout.h \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qframe.h \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qgridlayout.h \
+	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qlabel.h \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qlayout.h \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qlayoutitem.h \
 	O:/Qt/5.15.2/msvc2019_64/include/QtWidgets/qmainwindow.h \
