@@ -1,0 +1,144 @@
+{
+	"BUILD_DIR" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen",
+	"CMAKE_BINARY_DIR" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam",
+	"CMAKE_EXECUTABLE" : "O:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/CMakeLists.txt",
+		"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CMakeSystem.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake",
+		"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CMakeCXXCompiler.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeGenericSystem.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/Platform/Windows.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/Platform/WindowsPaths.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeCXXInformation.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/Compiler/MSVC-CXX.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/Platform/Windows-MSVC-CXX.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/Platform/Windows-MSVC.cmake",
+		"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CMakeRCCompiler.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeRCInformation.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeParseArguments.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"O:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"O:/Qt/Tools/CMake_64/share/cmake-3.19/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam",
+	"DEP_FILE" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "Omegacam_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/cameralistwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_cameralistwidget.cpp"
+		],
+		[
+			"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/common_includes.h",
+			"MU",
+			"EWIEGA46WW/moc_common_includes.cpp"
+		],
+		[
+			"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/home.h",
+			"MU",
+			"EWIEGA46WW/moc_home.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB", "WIN32" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release",
+		"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam",
+		"O:/Qt/5.15.2/msvc2019_64/include",
+		"O:/Qt/5.15.2/msvc2019_64/include/QtWidgets",
+		"O:/Qt/5.15.2/msvc2019_64/include/QtGui",
+		"O:/Qt/5.15.2/msvc2019_64/include/QtANGLE",
+		"O:/Qt/5.15.2/msvc2019_64/include/QtCore",
+		"O:/Qt/5.15.2/msvc2019_64/mkspecs/win32-msvc"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/Omegacam_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "O:/Qt/5.15.2/msvc2019_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "O:/Qt/5.15.2/msvc2019_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/Omegacam_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/cameralistwidget.cpp",
+			"MU"
+		],
+		[
+			"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/home.cpp",
+			"MU"
+		],
+		[
+			"D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/Omegacam/main.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

@@ -33,6 +33,9 @@ if(ANDROID)
     home.cpp
     home.h
     home.ui
+    cameralistwidget.cpp
+    cameralistwidget.h
+    common_includes.h
   )
 else()
   add_executable(Omegacam
@@ -40,6 +43,9 @@ else()
     home.cpp
     home.h
     home.ui
+    cameralistwidget.cpp
+    cameralistwidget.h
+    common_includes.h
   )
 endif()
 
