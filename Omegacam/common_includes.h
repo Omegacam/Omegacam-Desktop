@@ -12,6 +12,9 @@
 #include <vector>
 #include <string>
 
+#include <zmq.hpp>
+
 #include "options.h"
+#include "communication.h"
 
 #endif // COMMON_INCLUDES_H

@@ -27,6 +27,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
+include_directories(${CMAKE_SOURCE_DIR}/3rd_party/header)
+link_directories(${CMAKE_SOURCE_DIR}/3rd_party/lib)
+#link_directories(${CMAKE_SOURCE_DIR}/3rd_party/bin)
+
 if(ANDROID)
   add_library(Omegacam SHARED
     main.cpp
@@ -37,6 +41,8 @@ if(ANDROID)
     cameralistwidget.h
     common_includes.h
     options.h
+    communication.cpp
+    communication.h
   )
 else()
   add_executable(Omegacam
@@ -48,7 +54,11 @@ else()
     cameralistwidget.h
     common_includes.h
     options.h
+    communication.cpp
+    communication.h
   )
 endif()
 
-target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets libzmq-v142-mt-s-4_3_4 libzmq-v142-mt-4_3_4)
+
+

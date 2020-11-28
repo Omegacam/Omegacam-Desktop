@@ -18,7 +18,7 @@ home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     rightScrollArea->setWidget(cameraList);
     rightScrollArea->setWidgetResizable(true);
     rightScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    rightScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    //rightScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     //rightScrollArea->show();
 }
 
@@ -27,6 +27,7 @@ void home::setMainContentStream(){
     QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
     if (senderButton){ // sender is a button
         qInfo() << "sender is button";
+        qInfo() << "from singleton: " << communication::getInstance()->receive();
     }
 }
 

@@ -63,6 +63,9 @@ void CameraListWidget::resizeEvent(QResizeEvent*){
         if (button){
             button->setMaximumWidth(this->size().width());
         }
+        else{
+            qCritical() << "Invalid widget found in right bar";
+        }
     }
     //this->setFixedWidth(parentptr->size().width());
 }

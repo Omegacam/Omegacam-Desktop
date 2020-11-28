@@ -21,13 +21,13 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
 
-The CXX compiler identification is MSVC, found in "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CompilerIdCXX/CMakeCXXCompilerId.exe"
+The CXX compiler identification is MSVC, found in "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CompilerIdCXX/CMakeCXXCompilerId.exe"
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/CMakeTmp
+Change Dir: D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Visual Studio 2019/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_9961c && [1/2] Building CXX object CMakeFiles\cmTC_9961c.dir\CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_9961c.exe
+Run Build Command(s):C:/Program Files (x86)/Visual Studio 2019/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_7c64e && [1/2] Building CXX object CMakeFiles\cmTC_7c64e.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_7c64e.exe
 
 
 

@@ -29,6 +29,7 @@ public:
     {
         if (home->objectName().isEmpty())
             home->setObjectName(QString::fromUtf8("home"));
+        home->setEnabled(true);
         home->resize(925, 590);
         home->setMinimumSize(QSize(500, 400));
         home->setAutoFillBackground(false);
