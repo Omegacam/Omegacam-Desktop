@@ -19,7 +19,7 @@ CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(
     layout->setContentsMargins(10, 10, 10, 10);
 
     for (int i = 0; i < 20; i++){
-       layout->addWidget(CreateChildButton(i, rootparent, layout));
+       layout->addWidget(CreateChildButton(i, rootparent));
     }
 
     this->setLayout(layout);
@@ -31,11 +31,11 @@ CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(
     //qInfo() << "Constructor called";
 }
 
-QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent, QVBoxLayout *layout){
+QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
     QPushButton *c = new QPushButton(this);
     //c->setText(QString::fromStdString("button #" + std::to_string(num) + "LONG \n LONG LONG LONG LONG LONG LONG LONG LONG TEXT"));
 
-    QLabel *title = new QLabel(QString::fromStdString("button #" + std::to_string(num) + "LONG LONG LONG LONG LONG LONG LONG LONG LONG TEXT"), c);
+    QLabel *title = new QLabel(QString::fromStdString("button #" + std::to_string(num) + " LONG LONG LONG LONG LONG LONG LONG LONG LONG TEXT"), c);
     title->setWordWrap(true);
 
     QHBoxLayout *titleLayout = new QHBoxLayout(c);

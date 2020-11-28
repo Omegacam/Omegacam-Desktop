@@ -12,5 +12,6 @@ int main(int argc, char *argv[]){
     w.setPalette(homeP);
     w.show();
     //w.rightScrollArea->widget();
+    communication::getInstance(); // create singleton instance
     return a.exec();
 }

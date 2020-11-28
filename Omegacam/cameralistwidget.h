@@ -13,7 +13,7 @@ public:
     ~CameraListWidget();
 
 private:
-    QPushButton* CreateChildButton(int num, home *rootparent, QVBoxLayout *layout);
+    QPushButton* CreateChildButton(int num, home *rootparent);
     QWidget* parentptr = nullptr;
 
     void resizeEvent(QResizeEvent*);

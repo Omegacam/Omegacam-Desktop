@@ -1,0 +1,8 @@
+# ninja log v5
+2	444	628244783	Omegacam_autogen/timestamp	8c4d4680c23d9a2e
+472	1763	628244784	CMakeFiles/Omegacam.dir/communication.cpp.obj	4a2dacd47db3022a
+464	1772	628244784	CMakeFiles/Omegacam.dir/home.cpp.obj	f095a65f5d9d7a4d
+450	1776	628244784	CMakeFiles/Omegacam.dir/main.cpp.obj	c4e2f4105a0deb38
+444	1819	628244784	CMakeFiles/Omegacam.dir/Omegacam_autogen/mocs_compilation.cpp.obj	224144645791d182
+458	1853	628244784	CMakeFiles/Omegacam.dir/cameralistwidget.cpp.obj	3beb9b831e79e554
+1853	2378	628244785	D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/bin/Omegacam.exe	4200c8cae64613c1

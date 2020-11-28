@@ -11,6 +11,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/3rd_party/bin")
+
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.
 # Check http://doc.qt.io/qt-5/deployment-android.html for more information.
 # They need to be set before the find_package(Qt5 ...) call.
@@ -29,7 +31,6 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR}/3rd_party/header)
 link_directories(${CMAKE_SOURCE_DIR}/3rd_party/lib)
-#link_directories(${CMAKE_SOURCE_DIR}/3rd_party/bin) <---- .dll needs to be in the same directory as exe
 
 if(ANDROID)
   add_library(Omegacam SHARED
@@ -60,5 +61,3 @@ else()
 endif()
 
 target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets libzmq-v142-mt-s-4_3_4 libzmq-v142-mt-4_3_4)
-
-

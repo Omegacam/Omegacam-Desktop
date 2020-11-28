@@ -50,7 +50,7 @@ build CMakeFiles\Omegacam.dir\Omegacam_autogen\mocs_compilation.cpp.obj: CXX_COM
   OBJECT_DIR = CMakeFiles\Omegacam.dir
   OBJECT_FILE_DIR = CMakeFiles\Omegacam.dir\Omegacam_autogen
   TARGET_COMPILE_PDB = CMakeFiles\Omegacam.dir\
-  TARGET_PDB = Omegacam.pdb
+  TARGET_PDB = "D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.pdb"
 
 build CMakeFiles\Omegacam.dir\main.cpp.obj: CXX_COMPILER__Omegacam_Release D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\main.cpp || cmake_object_order_depends_target_Omegacam
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
@@ -59,7 +59,7 @@ build CMakeFiles\Omegacam.dir\main.cpp.obj: CXX_COMPILER__Omegacam_Release D$:\U
   OBJECT_DIR = CMakeFiles\Omegacam.dir
   OBJECT_FILE_DIR = CMakeFiles\Omegacam.dir
   TARGET_COMPILE_PDB = CMakeFiles\Omegacam.dir\
-  TARGET_PDB = Omegacam.pdb
+  TARGET_PDB = "D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.pdb"
 
 build CMakeFiles\Omegacam.dir\home.cpp.obj: CXX_COMPILER__Omegacam_Release D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\home.cpp || cmake_object_order_depends_target_Omegacam
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
@@ -68,7 +68,7 @@ build CMakeFiles\Omegacam.dir\home.cpp.obj: CXX_COMPILER__Omegacam_Release D$:\U
   OBJECT_DIR = CMakeFiles\Omegacam.dir
   OBJECT_FILE_DIR = CMakeFiles\Omegacam.dir
   TARGET_COMPILE_PDB = CMakeFiles\Omegacam.dir\
-  TARGET_PDB = Omegacam.pdb
+  TARGET_PDB = "D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.pdb"
 
 build CMakeFiles\Omegacam.dir\cameralistwidget.cpp.obj: CXX_COMPILER__Omegacam_Release D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\cameralistwidget.cpp || cmake_object_order_depends_target_Omegacam
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
@@ -77,7 +77,7 @@ build CMakeFiles\Omegacam.dir\cameralistwidget.cpp.obj: CXX_COMPILER__Omegacam_R
   OBJECT_DIR = CMakeFiles\Omegacam.dir
   OBJECT_FILE_DIR = CMakeFiles\Omegacam.dir
   TARGET_COMPILE_PDB = CMakeFiles\Omegacam.dir\
-  TARGET_PDB = Omegacam.pdb
+  TARGET_PDB = "D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.pdb"
 
 build CMakeFiles\Omegacam.dir\communication.cpp.obj: CXX_COMPILER__Omegacam_Release D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\communication.cpp || cmake_object_order_depends_target_Omegacam
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
@@ -86,7 +86,7 @@ build CMakeFiles\Omegacam.dir\communication.cpp.obj: CXX_COMPILER__Omegacam_Rele
   OBJECT_DIR = CMakeFiles\Omegacam.dir
   OBJECT_FILE_DIR = CMakeFiles\Omegacam.dir
   TARGET_COMPILE_PDB = CMakeFiles\Omegacam.dir\
-  TARGET_PDB = Omegacam.pdb
+  TARGET_PDB = "D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.pdb"
 
 
 # =============================================================================
@@ -94,9 +94,9 @@ build CMakeFiles\Omegacam.dir\communication.cpp.obj: CXX_COMPILER__Omegacam_Rele
 
 
 #############################################
-# Link the executable Omegacam.exe
+# Link the executable D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.exe
 
-build Omegacam.exe: CXX_EXECUTABLE_LINKER__Omegacam_Release CMakeFiles\Omegacam.dir\Omegacam_autogen\mocs_compilation.cpp.obj CMakeFiles\Omegacam.dir\main.cpp.obj CMakeFiles\Omegacam.dir\home.cpp.obj CMakeFiles\Omegacam.dir\cameralistwidget.cpp.obj CMakeFiles\Omegacam.dir\communication.cpp.obj | O$:\Qt\5.15.2\msvc2019_64\lib\Qt5Widgets.lib O$:\Qt\5.15.2\msvc2019_64\lib\Qt5Gui.lib O$:\Qt\5.15.2\msvc2019_64\lib\Qt5Core.lib || Omegacam_autogen Omegacam_autogen_timestamp_deps
+build D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.exe: CXX_EXECUTABLE_LINKER__Omegacam_Release CMakeFiles\Omegacam.dir\Omegacam_autogen\mocs_compilation.cpp.obj CMakeFiles\Omegacam.dir\main.cpp.obj CMakeFiles\Omegacam.dir\home.cpp.obj CMakeFiles\Omegacam.dir\cameralistwidget.cpp.obj CMakeFiles\Omegacam.dir\communication.cpp.obj | O$:\Qt\5.15.2\msvc2019_64\lib\Qt5Widgets.lib O$:\Qt\5.15.2\msvc2019_64\lib\Qt5Gui.lib O$:\Qt\5.15.2\msvc2019_64\lib\Qt5Core.lib || Omegacam_autogen Omegacam_autogen_timestamp_deps
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:console
   LINK_LIBRARIES = O:\Qt\5.15.2\msvc2019_64\lib\Qt5Widgets.lib  libzmq-v142-mt-s-4_3_4.lib  libzmq-v142-mt-4_3_4.lib  O:\Qt\5.15.2\msvc2019_64\lib\Qt5Gui.lib  O:\Qt\5.15.2\msvc2019_64\lib\Qt5Core.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -105,9 +105,9 @@ build Omegacam.exe: CXX_EXECUTABLE_LINKER__Omegacam_Release CMakeFiles\Omegacam.
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = CMakeFiles\Omegacam.dir\
-  TARGET_FILE = Omegacam.exe
+  TARGET_FILE = "D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.exe"
   TARGET_IMPLIB = Omegacam.lib
-  TARGET_PDB = Omegacam.pdb
+  TARGET_PDB = "D:\Users\richa\Desktop\Misc\Github Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.pdb"
 
 
 #############################################
@@ -159,7 +159,7 @@ build Omegacam_autogen\timestamp: CUSTOM_COMMAND O$:\Qt\5.15.2\msvc2019_64\bin\m
 #############################################
 # Phony custom command for CMakeFiles\Omegacam_autogen_timestamp_deps
 
-build CMakeFiles\Omegacam_autogen_timestamp_deps: phony O$:\Qt\5.15.2\msvc2019_64\bin\uic.exe O$:\Qt\5.15.2\msvc2019_64\bin\moc.exe O$:\Qt\5.15.2\msvc2019_64\bin\Qt5Widgets.dll
+build CMakeFiles\Omegacam_autogen_timestamp_deps: phony O$:\Qt\5.15.2\msvc2019_64\bin\moc.exe O$:\Qt\5.15.2\msvc2019_64\bin\uic.exe O$:\Qt\5.15.2\msvc2019_64\bin\Qt5Widgets.dll
 
 
 #############################################
@@ -170,7 +170,9 @@ build CMakeFiles\Omegacam_autogen Omegacam_autogen\mocs_compilation.cpp: phony O
 # =============================================================================
 # Target aliases.
 
-build Omegacam: phony Omegacam.exe
+build Omegacam: phony D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.exe
+
+build Omegacam.exe: phony D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.exe
 
 # =============================================================================
 # Folder targets.
@@ -180,7 +182,7 @@ build Omegacam: phony Omegacam.exe
 #############################################
 # Folder: D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release
 
-build all: phony Omegacam.exe
+build all: phony D$:\Users\richa\Desktop\Misc\Github$ Repositories\Omegacam\Omegacam-Windows\Omegacam\3rd_party\bin\Omegacam.exe
 
 # =============================================================================
 # Built-in targets
