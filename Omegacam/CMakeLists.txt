@@ -29,7 +29,7 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR}/3rd_party/header)
 link_directories(${CMAKE_SOURCE_DIR}/3rd_party/lib)
-#link_directories(${CMAKE_SOURCE_DIR}/3rd_party/bin)
+#link_directories(${CMAKE_SOURCE_DIR}/3rd_party/bin) <---- .dll needs to be in the same directory as exe
 
 if(ANDROID)
   add_library(Omegacam SHARED
