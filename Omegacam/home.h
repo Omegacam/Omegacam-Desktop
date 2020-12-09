@@ -21,7 +21,7 @@ public:
 private:
     Ui::home *ui;
 
-    double rightScrollAreaWidthRatio = 0.35;
+    double rightScrollAreaWidthRatio = 0.20;
     int rightScrollAreaWidth = 100;
 
     void resizeEvent(QResizeEvent*);

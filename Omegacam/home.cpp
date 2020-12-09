@@ -7,7 +7,7 @@
 
 home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     ui->setupUi(this);
-    rightScrollAreaWidth = this->size().height() * rightScrollAreaWidthRatio;
+    rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
     rightScrollArea = new QScrollArea(this);
 
     rightScrollArea->setFrameShape(QFrame::NoFrame);
@@ -59,7 +59,7 @@ void home::setMainContentStream(){
 
 void home::resizeEvent(QResizeEvent*){
     //qInfo() << "resize: " << getRootWindowSize();
-    rightScrollAreaWidth = this->size().height() * rightScrollAreaWidthRatio;
+    rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
     rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
     rightScrollArea->widget()->resize(rightScrollArea->size().width(), rightScrollArea->size().height());
 }
