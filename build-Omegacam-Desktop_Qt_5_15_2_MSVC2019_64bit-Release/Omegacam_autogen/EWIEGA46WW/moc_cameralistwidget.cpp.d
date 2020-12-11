@@ -1,10 +1,10 @@
-D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/EWIEGA46WW/moc_cameralistwidget.cpp: D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/cameralistwidget.h \
-  D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/header/zmq.h \
-  D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/header/zmq.hpp \
-  D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/common_includes.h \
-  D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/communication.h \
-  D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/home.h \
-  D:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/options.h \
+C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/EWIEGA46WW/moc_cameralistwidget.cpp: C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/cameralistwidget.h \
+  C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/header/zmq.h \
+  C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/header/zmq.hpp \
+  C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/common_includes.h \
+  C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/communication.h \
+  C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/home.h \
+  C:/Users/richa/Desktop/Misc/Github\ Repositories/Omegacam/Omegacam-Windows/Omegacam/options.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtCore/QDebug \
   O:/Qt/5.15.2/msvc2019_64/include/QtCore/qalgorithms.h \
   O:/Qt/5.15.2/msvc2019_64/include/QtCore/qarraydata.h \

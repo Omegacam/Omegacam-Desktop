@@ -21,7 +21,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/3.19.0/CMakeSystem.cmake"
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -255,7 +255,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/3.19.0/CMakeCXXCompiler.cmake"
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -324,7 +324,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/3.19.0/CMakeRCCompiler.cmake"
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CMakeRCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -393,7 +393,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/3.19.0/CMakeCXXCompiler.cmake"
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/CMakeFiles/3.19.0/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -553,8 +553,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug",
-		"source" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam"
+		"build" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release",
+		"source" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam"
 	},
 	"version" : 
 	{

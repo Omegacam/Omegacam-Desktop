@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/bin/Omegacam.exe"
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/bin/Omegacam.exe"
 		},
 		{
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/bin/Omegacam.pdb"
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/bin/Omegacam.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG"
 				}
 			],
 			"defines" : 
@@ -74,24 +74,28 @@
 				},
 				{
 					"backtrace" : 3,
+					"define" : "QT_NO_DEBUG"
+				},
+				{
+					"backtrace" : 3,
 					"define" : "QT_WIDGETS_LIB"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug"
+					"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release"
 				},
 				{
-					"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam"
+					"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam"
 				},
 				{
 					"backtrace" : 0,
-					"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/Omegacam_autogen/include"
+					"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/header"
+					"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam/3rd_party/header"
 				},
 				{
 					"backtrace" : 3,
@@ -159,21 +163,21 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LIBPATH:D:\\Users\\richa\\Desktop\\Misc\\GITHUB~1\\Omegacam\\Omegacam-Windows\\Omegacam\\3rd_party\\lib",
+				"fragment" : "-LIBPATH:C:\\Users\\richa\\Desktop\\Misc\\GITHUB~1\\Omegacam\\Omegacam-Windows\\Omegacam\\3rd_party\\lib",
 				"role" : "libraryPath"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "O:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Widgetsd.lib",
+				"fragment" : "O:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Widgets.lib",
 				"role" : "libraries"
 			},
 			{
@@ -187,11 +191,11 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "O:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Guid.lib",
+				"fragment" : "O:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Gui.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "O:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Cored.lib",
+				"fragment" : "O:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Core.lib",
 				"role" : "libraries"
 			},
 			{
@@ -254,7 +258,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/Omegacam_autogen/mocs_compilation.cpp",
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -314,13 +318,13 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/Omegacam_autogen/timestamp",
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/timestamp",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/Omegacam_autogen/timestamp.rule",
+			"path" : "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/Omegacam_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

@@ -1,8 +1,8 @@
-# Install script for directory: D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam
+# Install script for directory: C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/Omegacam
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "D:/Program Files (x86)/Omegacam")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Omegacam")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/richa/Desktop/Misc/Github Repositories/Omegacam/Omegacam-Windows/build-Omegacam-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
