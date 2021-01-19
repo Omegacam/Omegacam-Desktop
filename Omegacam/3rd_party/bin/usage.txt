@@ -1,1 +1,0 @@
-You must copy the .dll to the same folder as the .exe in order for zmq to work
