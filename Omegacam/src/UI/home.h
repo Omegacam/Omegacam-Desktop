@@ -1,5 +1,5 @@
-#ifndef HOME_H
-#define HOME_H
+#ifndef _HOME_H_
+#define _HOME_H_
 
 #include <QMainWindow>
 #include <QScrollArea>
@@ -26,4 +26,4 @@ private:
 
     void resizeEvent(QResizeEvent*);
 };
-#endif // HOME_H
+#endif // _HOME_H_

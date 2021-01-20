@@ -1,5 +1,5 @@
-#ifndef CAMERALISTWIDGET_H
-#define CAMERALISTWIDGET_H
+#ifndef _CAMERALISTWIDGET_H_
+#define _CAMERALISTWIDGET_H_
 
 #include <QWidget>
 #include "../common_includes.h"
@@ -21,4 +21,4 @@ signals:
 
 };
 
-#endif // CAMERALISTWIDGET_H
+#endif // _CAMERALISTWIDGET_H_

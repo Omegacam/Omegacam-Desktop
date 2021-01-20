@@ -31,6 +31,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/output")
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Network REQUIRED)
 
 #include_directories(${CMAKE_SOURCE_DIR}/3rd_party/header)
 #link_directories(${CMAKE_SOURCE_DIR}/3rd_party/lib)
@@ -58,9 +59,9 @@ else()
     "src/UI/home.ui"
     "src/UI/cameralistwidget.cpp"
     "src/UI/cameralistwidget.h"
-    "src/Backend/communication.cpp"
-    "src/Backend/communication.h"
-  )
+    "src/Backend/Network/communication.cpp"
+    "src/Backend/Network/communication.h"
+   "src/Backend/Network/udp_socket.cpp" "src/Backend/Network/udp_socket.h")
 endif()
 
-target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network)

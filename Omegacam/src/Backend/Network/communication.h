@@ -1,7 +1,8 @@
-#ifndef COMMUNICATION_H
-#define COMMUNICATION_H
+#ifndef _COMMUNICATION_H_
+#define _COMMUNICATION_H_
 
-#include "../common_includes.h"
+#include "../../common_includes.h"
+#include "udp_socket.h"
 
 class communication
 {
@@ -14,4 +15,4 @@ private:
     static communication* obj;
 };
 
-#endif // COMMUNICATION_H
+#endif // _COMMUNICATION_H_

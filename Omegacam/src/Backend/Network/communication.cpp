@@ -19,6 +19,7 @@ communication::communication(){
     }  catch (int e) {
        qInfo() << "error e caught: " << e;
     }*/
+
 }
 
 communication::~communication(){}
