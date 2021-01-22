@@ -1,5 +1,7 @@
 #include "udp_socket.h"
 
+//https://www.bogotobogo.com/Qt/Qt5_QUdpSocket.php
+
 udpsocket::udpsocket(std::string address, quint16 port, QObject* parent) : QObject(parent) {
 	socket = new QUdpSocket(this);
 	
@@ -23,10 +25,6 @@ void udpsocket::send(QByteArray data) {
 	socket->writeDatagram(data, connected_addr, connected_addrport);
 }
 
-bool udpsocket::read(QByteArray& buffer) { // nonblocking checks for received messages
-	return false;
-}
-
 void udpsocket::recv() {
 	QByteArray buffer;
 	buffer.resize(socket->pendingDatagramSize());
@@ -42,9 +40,11 @@ void udpsocket::recv() {
 
 	socket->readDatagram(buffer.data(), buffer.size(), &senderaddress, &senderport);
 
-	recvbuffer.addr = senderaddress;
+
+	qInfo() << "Data recv: " << buffer;
+	/*recvbuffer.addr = senderaddress;
 	recvbuffer.addrport = senderport;
-	recvbuffer.buffer = buffer;
+	recvbuffer.buffer = buffer;*/
 }
 
 

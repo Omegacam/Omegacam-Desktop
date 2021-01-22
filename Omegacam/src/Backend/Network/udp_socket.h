@@ -16,7 +16,6 @@ class udpsocket : public QObject {
 public:
 	udpsocket(std::string address, quint16 port, QObject* parent = 0);
 	void send(QByteArray data);
-	bool read(QByteArray& buffer);
 signals:
 private slots:
 	void recv();
