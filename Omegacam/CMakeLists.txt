@@ -33,8 +33,8 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Network REQUIRED)
 
-#include_directories(${CMAKE_SOURCE_DIR}/3rd_party/header)
-#link_directories(${CMAKE_SOURCE_DIR}/3rd_party/lib)
+include_directories(${CMAKE_SOURCE_DIR}/3rd_party/header)
+link_directories(${CMAKE_SOURCE_DIR}/3rd_party/lib)
 
 if(ANDROID)
   add_library(Omegacam SHARED
@@ -61,7 +61,7 @@ else()
     "src/UI/cameralistwidget.h"
     "src/Backend/Network/communication.cpp"
     "src/Backend/Network/communication.h"
-   "src/Backend/Network/udp_socket.cpp" "src/Backend/Network/udp_socket.h")
+    )
 endif()
 
-target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network)
+target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network libzmq-v142-mt-4_3_5 libzmq-v142-mt-s-4_3_5)
