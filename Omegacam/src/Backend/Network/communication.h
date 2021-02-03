@@ -10,8 +10,8 @@ public:
     static communication* getInstance();
     //
 
-    bool addConnection(string s); // address
-    bool removeConnection(string s); // address
+    bool connect(string s); // address
+    bool disconnect(); // address
     bool recv(string& buf);
 
 private:
@@ -23,11 +23,12 @@ private:
     
     void setupSocket();
     bool isSocketSetup = false;
-    set<string> connectedAddresses; // stores addresses connceted by the socket
+    bool isSocketConnected = false;
+    string socketConnectionAddress = "";
+    //set<string> connectedAddresses; // stores addresses connceted by the socket
 
     void* ctx = nullptr;
     void* sub = nullptr;
-   
 
 };
 

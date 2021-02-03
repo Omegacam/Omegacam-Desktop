@@ -35,47 +35,74 @@ void communication::setupSocket() {
             logs::crit("Failed to set sock option subscribe");
             return;
         }
+        /*int sz = 0;
+        rc = zmq_setsockopt(sub, ZMQ_RCVHWM, &sz, sizeof(sz));
+        if (rc == -1) {
+            logs::crit("Failed to set sock option rcvhwm");
+            return;
+        }
+        rc = zmq_setsockopt(sub, ZMQ_RCVBUF, &sz, sizeof(sz));
+        if (rc == -1) {
+            logs::crit("Failed to set sock option rcvbuf");
+            return;
+        }*/
     }
     isSocketSetup = true;
 }
 
 
-bool communication::addConnection(string s) {
-    int rc = zmq_connect(sub, s.c_str());
-    if (rc == -1) {
-        logs::crit("Failed to bind - " + s);
+bool communication::connect(string s) {
+    if (!isSocketConnected) {
+        int rc = zmq_connect(sub, s.c_str());
+        if (rc == -1) {
+            logs::crit("Failed to bind - " + s);
+        }
+        else {
+            isSocketConnected = true;
+            socketConnectionAddress = s;
+        }
+        return rc != -1;
     }
     else {
-        connectedAddresses.insert(s);
+        logs::crit("Socket already connected. Cannot connect to - " + s);
+        return false;
     }
-    return rc != -1;
 }
 
-bool communication::removeConnection(string s) {
-    int rc = zmq_disconnect(sub, s.c_str());
-    if (rc == -1) {
-        logs::crit("Failed to unbind - " + s);
+bool communication::disconnect() {
+    if (isSocketConnected) {
+        int rc = zmq_disconnect(sub, socketConnectionAddress.c_str());
+        if (rc == -1) {
+            logs::crit("Failed to unbind - " + socketConnectionAddress);
+        }
+        else {
+            isSocketConnected = false;
+            socketConnectionAddress = "";
+        }
+        return rc != -1;
     }
     else {
-        connectedAddresses.erase(s);
+        logs::stat("Socket doesn't have an active connection already");
+        return true;
     }
-    return rc != -1;
 }
 
 bool communication::recv(string& buf) {
-    if (connectedAddresses.size() == 0){
+    if (isSocketConnected) {
+        zmq_msg_t msg;
+        int rc = zmq_msg_init(&msg);
+        if (rc == -1) {
+            return false;
+        }
+        rc = zmq_msg_recv(&msg, sub, ZMQ_DONTWAIT);
+        if (rc == -1) {
+            return false;
+        }
+        buf = string(static_cast<char*>(zmq_msg_data(&msg)), zmq_msg_size(&msg));
+        zmq_msg_close(&msg);
+        return true;
+    }
+    else {
         return false;
     }
-    zmq_msg_t msg;
-    int rc = zmq_msg_init(&msg);
-    if (rc == -1) {
-        return false;
-    }
-    rc = zmq_msg_recv(&msg, sub, ZMQ_DONTWAIT);
-    if (rc == -1) {
-        return false;
-    }
-    buf = string(static_cast<char*>(zmq_msg_data(&msg)), zmq_msg_size(&msg));
-    zmq_msg_close(&msg);
-    return true;
 }
