@@ -13,6 +13,7 @@
 #include <string>
 
 #include "options.h"
-#include "Backend/Network/communication.h"
+
+using namespace std;
 
 #endif // COMMON_INCLUDES_H

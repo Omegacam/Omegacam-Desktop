@@ -1,5 +1,4 @@
 #include "communication.h"
-#include <zmq.hpp>
 
 communication* communication::obj;
 
@@ -9,20 +8,33 @@ communication* communication::getInstance(){
     }
     return communication::obj;
 }
-
-int communication::receive(){
-    return 1;
+communication::communication(){
+    printVersion();
+    ctx = zmq_ctx_new();
 }
 
-communication::communication(){
-    /*try {
-        qInfo()
-    }  catch (int e) {
-       qInfo() << "error e caught: " << e;
-    }*/
+communication::~communication(){
+    zmq_term(ctx);
+}
+
+//
+
+void communication::printVersion() {
     int major, minor, patch;
     zmq_version(&major, &minor, &patch);
     qInfo() << "version - " << major << "." << minor << "." << patch << endl;
 }
 
-communication::~communication(){}
+
+subsocket* communication::createSocket() {
+    subsocket* s = new subsocket(ctx);
+    /*bool f = 1;
+    f = f && s->bind(address);
+    f = f && s->subscribe(topic);
+    if (!f) {
+        qCritical() << "bind or subscribe failed when creating socket";
+    }*/
+    return s;
+}
+
+

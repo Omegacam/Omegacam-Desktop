@@ -51,7 +51,7 @@ void home::setMainContentStream(){
     QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
     if (senderButton){ // sender is a button
         qInfo() << "sender is button";
-        qInfo() << "from singleton: " << communication::getInstance()->receive();
+        //qInfo() << "from singleton: " << communication::getInstance()->receive();
     }
 }
 
