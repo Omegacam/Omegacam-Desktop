@@ -3,7 +3,6 @@
 
 #include <QApplication>
 #include <QPushButton>
-#include <QDebug>
 #include <QScrollArea>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -11,8 +10,10 @@
 #include <QLabel>
 #include <vector>
 #include <string>
+#include <set>
 
 #include "options.h"
+#include "src/Backend/logs.h"
 
 using namespace std;
 

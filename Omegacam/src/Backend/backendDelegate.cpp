@@ -8,7 +8,7 @@ bool backendDelegate::isRunning = false;
 
 void backendDelegate::start() {
 	isRunning = true;
-	subsocket* pub = communication::getInstance()->createSocket();
+	/*subsocket* pub = communication::getInstance()->createSocket();
 	pub->bind("tcp://192.168.1.11:1234");
 	pub->subscribe("");
 	while (isRunning) {
@@ -21,7 +21,7 @@ void backendDelegate::start() {
 		}
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
-	delete pub;
+	delete pub;*/
 	/*zmq::context_t ctx(1);
 	zmq::socket_t sub(ctx, ZMQ_SUB);
 	sub.connect("tcp://192.168.1.10:1234");
@@ -32,6 +32,17 @@ void backendDelegate::start() {
 		qInfo() << "recvd: " << QString::fromStdString(string(static_cast<char*>(msg.data()), msg.size())) << endl;
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}*/
+	communication::getInstance()->addConnection("tcp://192.168.1.11:1234");
+	while (isRunning) {
+		string a;
+		if (communication::getInstance()->recv(a)) {
+			logs::stat("recv msg - " + a);
+		}
+		else {
+			logs::stat("no msg recved - " + to_string(zmq_errno()));
+		}
+		this_thread::sleep_for(chrono::milliseconds(10));
+	}
 
 }
 

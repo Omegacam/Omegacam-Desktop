@@ -61,7 +61,7 @@ else()
     "src/UI/cameralistwidget.h"
     "src/Backend/Network/communication.cpp"
     "src/Backend/Network/communication.h"
-     "src/Backend/Network/Sockets/subSocket.cpp" "src/Backend/Network/Sockets/subSocket.h" "src/Backend/backendDelegate.cpp" "src/Backend/backendDelegate.h")
+       "src/Backend/backendDelegate.cpp" "src/Backend/backendDelegate.h" "src/Backend/logs.cpp" "src/Backend/logs.h")
 endif()
 
 target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network libzmq-v142-mt-4_3_5 libzmq-v142-mt-s-4_3_5)
