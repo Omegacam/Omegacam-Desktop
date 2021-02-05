@@ -10,12 +10,9 @@ CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(
     this->setAutoFillBackground(true);
     QPalette p;
     p.setColor(QPalette::Window, secondaryBackgroundColor);
-    //p.setColor(QPalette::)
     this->setPalette(p);
 
     QVBoxLayout *layout = new QVBoxLayout(this);
-    //layout->setGeometry()
-    //layout->setGeometry(QRect(0, 0, 1, 1));
     layout->setContentsMargins(10, 10, 10, 10);
 
     for (int i = 0; i < 20; i++){
@@ -24,16 +21,11 @@ CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(
 
     this->setLayout(layout);
 
-    //this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
-    //this->setFixedWidth(parentptr->size().width()
-
     this->show();
-    //qInfo() << "Constructor called";
 }
 
 QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
     QPushButton *c = new QPushButton(this);
-    //c->setText(QString::fromStdString("button #" + std::to_string(num) + "LONG \n LONG LONG LONG LONG LONG LONG LONG LONG TEXT"));
 
     QLabel *title = new QLabel(QString::fromStdString("button #" + std::to_string(num) + " LONG LONG LONG LONG LONG LONG LONG LONG LONG TEXT"));
     title->setWordWrap(true);
@@ -48,7 +40,6 @@ QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
     QPalette p = c->palette();
     p.setColor(QPalette::Button, secondaryBackgroundColor);
     c->setPalette(p);
-    //c->resize(0, 80);
 
     c->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
@@ -57,7 +48,6 @@ QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
 }
 
 void CameraListWidget::resizeEvent(QResizeEvent*){
-    //qInfo() << "resize called from widget";
     for (int i = 0; i < this->layout()->count(); i++){
         QWidget *button = this->layout()->itemAt(i)->widget();
         if (button){
@@ -67,7 +57,6 @@ void CameraListWidget::resizeEvent(QResizeEvent*){
             logs::crit("Non button found");
         }
     }
-    //this->setFixedWidth(parentptr->size().width());
 }
 
 CameraListWidget::~CameraListWidget(){

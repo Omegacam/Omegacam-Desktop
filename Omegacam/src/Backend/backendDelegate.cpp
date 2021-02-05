@@ -1,6 +1,7 @@
 #include "backendDelegate.h"
 
 #include "Network/communication.h"
+#include <msgpack.hpp>
 #include <thread>
 #include <chrono>
 
@@ -8,7 +9,6 @@ bool backendDelegate::isRunning = false;
 
 void backendDelegate::start() {
 	isRunning = true;
-	//communication::getInstance()->addConnection("tcp://192.168.1.11:1234");
 	communication::getInstance()->connect("tcp://192.168.1.6:1234");
 	while (isRunning) {
 		string a;

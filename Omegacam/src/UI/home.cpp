@@ -42,8 +42,6 @@ home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     "    subcontrol-origin: margin;"
     "}"
     ));
-    //rightScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //rightScrollArea->show();
 }
 
 void home::setMainContentStream(){
@@ -51,12 +49,10 @@ void home::setMainContentStream(){
     QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
     if (senderButton){ // sender is a button
         qInfo() << "sender is button";
-        //qInfo() << "from singleton: " << communication::getInstance()->receive();
     }
 }
 
 void home::resizeEvent(QResizeEvent*){
-    //qInfo() << "resize: " << getRootWindowSize();
     rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
     rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
     rightScrollArea->widget()->resize(rightScrollArea->size().width(), rightScrollArea->size().height());
