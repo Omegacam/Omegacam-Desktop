@@ -35,6 +35,8 @@ void communication::setupSocket() {
             logs::crit("Failed to set sock option subscribe");
             return;
         }
+        int t = 1;
+        rc = zmq_setsockopt(sub, ZMQ_CONFLATE, &t, sizeof(t));
         /*int sz = 0;
         rc = zmq_setsockopt(sub, ZMQ_RCVHWM, &sz, sizeof(sz));
         if (rc == -1) {
@@ -94,7 +96,7 @@ bool communication::recv(string& buf) {
         if (rc == -1) {
             return false;
         }
-        rc = zmq_msg_recv(&msg, sub, ZMQ_DONTWAIT);
+        rc = zmq_msg_recv(&msg, sub, ZMQ_NOBLOCK);
         if (rc == -1) {
             return false;
         }

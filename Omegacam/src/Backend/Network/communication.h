@@ -12,6 +12,7 @@ public:
 
     bool connect(string s); // address
     bool disconnect(); // address
+    
     bool recv(string& buf);
 
 private:
