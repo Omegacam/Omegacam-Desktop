@@ -19,6 +19,7 @@ public:
     QScrollArea* rightScrollArea = nullptr;
 
     void setMainContentStream();
+    void displayBase64Frame(std::string raw);
 
 private:
     home(QWidget *parent = nullptr);
@@ -26,12 +27,15 @@ private:
 
     static home* obj; // singleton
 
-    //
     Ui::home *ui;
+    //
 
     double rightScrollAreaWidthRatio = 0.20;
     int rightScrollAreaWidth = 100;
 
+    QLabel* imageLabel = nullptr; // used to display images
+
     void resizeEvent(QResizeEvent*);
+    void setupUI();
 };
 #endif // _HOME_H_

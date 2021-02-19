@@ -6,6 +6,8 @@
 #include <thread>
 #include <chrono>
 
+#include "../UI/home.h"
+
 bool backendDelegate::isRunning = false;
 
 void backendDelegate::start() {
@@ -42,6 +44,6 @@ void backendDelegate::stop() {
 	isRunning = false;
 }
 
-void backendDelegate::parsedDataCallback(cameraDataPacket& data) {
-
+void backendDelegate::parsedDataCallback(cameraDataPacket& data) { // calls ui func with data from packet
+	home::getInstance()->displayBase64Frame(data.frameData);
 }

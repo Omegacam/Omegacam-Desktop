@@ -12,8 +12,18 @@ home* home::getInstance() {
     return home::obj;
 }
 
+home::~home(){
+    delete ui;
+}
+
 home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     ui->setupUi(this);
+    setupUI();
+}
+
+//
+
+void home::setupUI() {
     rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
     rightScrollArea = new QScrollArea(this);
 
@@ -52,6 +62,29 @@ home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     "    subcontrol-origin: margin;"
     "}"
     ));
+
+    imageLabel = new QLabel(this);
+    //imageLabel->setText("Test");
+    imageLabel->setGeometry(0, 0, this->size().width() - rightScrollAreaWidth, this->size().height());
+
+    QPalette p = imageLabel->palette();
+    p.setColor(imageLabel->backgroundRole(), QColor::fromRgb(0, 134, 195));
+    //p.setColor(imageLabel->foregroundRole(), Qt::blue);
+    imageLabel->setPalette(p);
+
+    imageLabel->setAutoFillBackground(true);
+    imageLabel->setAlignment(Qt::AlignCenter);
+
+}
+
+void home::displayBase64Frame(std::string raw) {
+    //qInfo() << "called set image";
+    
+    QByteArray raw_bytes(raw.c_str(), raw.length());
+    QPixmap image;
+    image.loadFromData(QByteArray::fromBase64(raw_bytes));
+
+    imageLabel->setPixmap(image);
 }
 
 void home::setMainContentStream(){
@@ -63,12 +96,14 @@ void home::setMainContentStream(){
 }
 
 void home::resizeEvent(QResizeEvent*){
+    
+    // right scroll area
     rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
     rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
     rightScrollArea->widget()->resize(rightScrollArea->size().width(), rightScrollArea->size().height());
+
+    // image label
+    imageLabel->setGeometry(0, 0, this->size().width() - rightScrollAreaWidth, this->size().height());
 }
 
-home::~home(){
-    delete ui;
-}
 
