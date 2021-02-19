@@ -9,6 +9,8 @@ public:
 	static void stop();
 private:
 	static bool isRunning; // to stop this thread from running after the main thread terminates
+
+	static void parsedDataCallback(cameraDataPacket& data); // uses the parsed data and calls UI functions
 };
 
 #endif // !_BACKEND_DELEGATE_H_

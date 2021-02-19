@@ -12,13 +12,4 @@ dataManager* dataManager::getInstance() {
 	return dataManager::obj;
 }
 
-void dataManager::parseData(string& rawDataString) {
-
-	JS::ParseContext ctx(rawDataString);
-
-	cameraDataPacket packet;
-	ctx.parseTo(packet);
-
-	logs::stat("packet data - " + packet.s);
-}
 

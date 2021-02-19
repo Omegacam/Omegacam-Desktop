@@ -11,13 +11,13 @@
 
 int main(int argc, char *argv[]){
     QApplication a(argc, argv);
-    home w;
-    w.setWindowTitle("Omegacam");
+    //home w;
+    home::getInstance()->setWindowTitle("Omegacam");
     QPalette homeP;
     homeP.setColor(QPalette::Window, primaryBackgroundColor);
-    w.setAutoFillBackground(true);
-    w.setPalette(homeP);
-    w.show();
+    home::getInstance()->setAutoFillBackground(true);
+    home::getInstance()->setPalette(homeP);
+    home::getInstance()->show();
     //w.rightScrollArea->widget();
 
     auto concurrent = std::async(std::launch::async, [&] {

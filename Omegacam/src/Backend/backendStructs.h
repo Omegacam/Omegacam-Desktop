@@ -5,9 +5,13 @@
 #include <json_struct.h>
 
 struct cameraDataPacket {
-    std::string s;
-
-    JS_OBJ(s);
+    std::string deviceName, localIp;
+    
+    int v_width, v_height;
+    
+    std::string frameData; // base64 encoded jpg
+    int frameDataSize;
+    JS_OBJ(deviceName, localIp, v_width, v_height, frameData, frameDataSize);
 };
 
 #endif // !_BACKEND_STRUCTS_H_

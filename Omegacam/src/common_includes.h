@@ -8,12 +8,14 @@
 #include <QHBoxLayout>
 #include <QColor>
 #include <QLabel>
+#include <QImage>
 #include <vector>
 #include <string>
 #include <set>
 
 #include "options.h"
 #include "src/Backend/logs.h"
+#include "src/Backend/backendStructs.h"
 
 using namespace std;
 

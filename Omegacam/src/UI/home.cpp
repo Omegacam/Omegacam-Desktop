@@ -3,6 +3,15 @@
 
 #include "cameralistwidget.h"
 
+home* home::obj = nullptr;
+
+home* home::getInstance() {
+    if (home::obj == nullptr) {
+        home::obj = new home();
+    }
+    return home::obj;
+}
+
 home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     ui->setupUi(this);
     rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
@@ -16,7 +25,8 @@ home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     rightScrollArea->setWidget(cameraList);
     rightScrollArea->setWidgetResizable(true);
     rightScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    rightScrollArea->setStyleSheet(QString::fromUtf8("QScrollBar:vertical {"
+    rightScrollArea->setStyleSheet(QString::fromUtf8(
+    "QScrollBar:vertical {"
     "    border: 1px solid #999999;"
     "    background:white;"
     "    width:10px;    "

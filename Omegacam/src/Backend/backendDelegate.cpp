@@ -17,7 +17,9 @@ void backendDelegate::start() {
 		string rawDataString;
 		if (communication::getInstance()->recv(rawDataString)) {
 			//logs::stat(rawDataString);
-			dataManager::getInstance()->parseData(rawDataString);
+			
+			parsedDataCallback(dataManager::getInstance()->parseData(rawDataString));
+			
 			c++;
 			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
 			if (c == 30) {
@@ -38,4 +40,8 @@ void backendDelegate::start() {
 
 void backendDelegate::stop() {
 	isRunning = false;
+}
+
+void backendDelegate::parsedDataCallback(cameraDataPacket& data) {
+
 }
