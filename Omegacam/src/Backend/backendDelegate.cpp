@@ -24,17 +24,14 @@ void backendDelegate::start() {
 			
 			c++;
 			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
-			if (c == 30) {
-				logs::stat("30 FRAMES = " + to_string(duration) + " microseconds");
+			if (duration >= 1000000) { // 1 sec
+				logs::stat( to_string(c) + " packets in 1 sec");
 				startT = std::chrono::high_resolution_clock::now();
 				c = 0;
 			}
 		}
-		else if (zmq_errno() == 11){
-		//	logs::stat("no msg recved");
-		}
 		else {
-			logs::stat("msg error - " + to_string(zmq_errno()));
+			logs::stat("recv error");
 		}
 		this_thread::sleep_for(chrono::milliseconds(1));
 	}

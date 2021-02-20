@@ -2,7 +2,6 @@
 #define _COMMUNICATION_H_
 
 #include "../../common_includes.h"
-#include <zmq.h>
 
 class communication
 {
@@ -19,13 +18,14 @@ private:
     communication();
     ~communication();
     static communication* obj;
-    void printVersion();
     //
     
     void setupSocket();
     bool isSocketSetup = false;
     bool isSocketConnected = false;
+    
     string socketConnectionAddress = "";
+    quint16 socketConnectionPort = 0;
     //set<string> connectedAddresses; // stores addresses connceted by the socket
 
     void* ctx = nullptr;
