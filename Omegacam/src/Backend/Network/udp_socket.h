@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QUdpSocket>
+#include <QNetworkInterface>
 #include "../../common_includes.h"
 
 struct socketbuffer {
@@ -14,11 +15,10 @@ struct socketbuffer {
 class udpsocket : public QObject {
 	Q_OBJECT
 public:
-	udpsocket(std::string address, quint16 port, QObject* parent = 0);
+	udpsocket(QObject* parent = 0); // default constructor
 	void send(QByteArray data);
-signals:
-private slots:
-	void recv();
+	bool connect_socket(string address, quint16 port);
+	bool recv(socketbuffer& recvbuffer);
 protected:
 	QUdpSocket* socket;
 	QHostAddress connected_addr;

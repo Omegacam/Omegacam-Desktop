@@ -15,26 +15,29 @@ communication::~communication(){
 }
 
 //
-void communication::setupSocket() {
-    if (!isSocketSetup) {
 
-    }
-    isSocketSetup = true;
-}
-
-
-bool communication::connect(string s) {
+bool communication::connect(string address, quint16 port) {
     if (!isSocketConnected) {
-        return true;
+        socket = new udpsocket();
+        if (socket->connect_socket(address, port)){
+            isSocketConnected = true;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     else {
-        logs::crit("Socket already connected. Cannot connect to - " + s);
+        logs::crit("Socket already connected. Cannot connect to - " + address + ":" + to_string(port));
         return false;
     }
 }
 
 bool communication::disconnect() {
     if (isSocketConnected) {
+        socket->disconnect();
+        socket = nullptr;
+        isSocketConnected = false;
     }
     else {
         logs::stat("Socket doesn't have an active connection already");
@@ -44,9 +47,13 @@ bool communication::disconnect() {
 
 bool communication::recv(string& buf) {
     if (isSocketConnected) {
-        
+        //
+        socketbuffer buffer;
+        bool hasRecvData = socket->recv(buffer);
+        return hasRecvData;
     }
     else {
+        logs::stat("Socket is not connected");
         return false;
     }
 }

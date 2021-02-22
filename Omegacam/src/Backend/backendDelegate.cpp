@@ -12,7 +12,7 @@ bool backendDelegate::isRunning = false;
 
 void backendDelegate::start() {
 	isRunning = true;
-	communication::getInstance()->connect("tcp://192.168.1.9:1234");
+	communication::getInstance()->connect("224.0.0.0", 28650);
 	auto startT = std::chrono::high_resolution_clock::now();
 	long c = 0;
 	while (isRunning) {
@@ -31,7 +31,7 @@ void backendDelegate::start() {
 			}
 		}
 		else {
-			logs::stat("recv error");
+			//logs::stat("recv error");
 		}
 		this_thread::sleep_for(chrono::milliseconds(1));
 	}
