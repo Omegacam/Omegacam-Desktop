@@ -54,7 +54,7 @@ void udpsocket::send(QByteArray data) { // unused function
 
 bool udpsocket::recv(socketbuffer& recvbuffer) {
 	if (socket->hasPendingDatagrams()) {
-		logs::stat("has data");
+		//logs::stat("has data");
 		QByteArray raw_bytes;
 		raw_bytes.resize(socket->pendingDatagramSize());
 
@@ -69,7 +69,7 @@ bool udpsocket::recv(socketbuffer& recvbuffer) {
 
 		socket->readDatagram(raw_bytes.data(), raw_bytes.size(), &senderaddress, &senderport);
 
-		qInfo() << "recv data: " << raw_bytes;
+		//qInfo() << "recv data: " << raw_bytes;
 
 		recvbuffer.addr = senderaddress;
 		recvbuffer.addrport = senderport;

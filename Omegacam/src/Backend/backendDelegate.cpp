@@ -33,7 +33,7 @@ void backendDelegate::start() {
 		else {
 			//logs::stat("recv error");
 		}
-		this_thread::sleep_for(chrono::milliseconds(1));
+		this_thread::sleep_for(chrono::microseconds(1));
 	}
 }
 

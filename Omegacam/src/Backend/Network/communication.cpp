@@ -50,6 +50,9 @@ bool communication::recv(string& buf) {
         //
         socketbuffer buffer;
         bool hasRecvData = socket->recv(buffer);
+
+        buf = string(buffer.buffer, buffer.buffer.size());
+
         return hasRecvData;
     }
     else {
