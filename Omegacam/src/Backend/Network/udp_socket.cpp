@@ -38,6 +38,8 @@ bool udpsocket::connect_socket(string address, quint16 port) {
 		}
 	}
 
+	//socket->setSocketOption(QAbstractSocket::ReceiveBufferSizeSocketOption, 1);
+
 	//logs::stat("success setup socket with address - " + address + ":" + to_string(port));
 	//connect(socket, SIGNAL(readyRead()), this, SLOT(recv()));
 
@@ -54,7 +56,6 @@ void udpsocket::send(QByteArray data) { // unused function
 
 bool udpsocket::recv(socketbuffer& recvbuffer) {
 	if (socket->hasPendingDatagrams()) {
-		//logs::stat("has data");
 		QByteArray raw_bytes;
 		raw_bytes.resize(socket->pendingDatagramSize());
 

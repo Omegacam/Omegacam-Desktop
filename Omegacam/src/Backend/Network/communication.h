@@ -12,13 +12,20 @@ public:
 
     bool connect(string address, quint16 port); // address
     bool disconnect(); // address
-    
-    bool recv(string& buf);
+
+    void startThread();
+    void stopThread();
+
+    //bool recv(string& buf);
 
 private:
     communication();
     ~communication();
     static communication* obj;
+    //
+
+    bool isRunningThread = false;
+
     //
 
     udpsocket* socket;

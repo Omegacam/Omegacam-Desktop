@@ -14,12 +14,16 @@ class home : public QMainWindow{
 
 public:
     static home* getInstance();
+    
+    void closeEvent(QCloseEvent* event);
     //
 
     QScrollArea* rightScrollArea = nullptr;
 
     void setMainContentStream();
     void displayBase64Frame(std::string raw);
+
+    //
 
 private:
     home(QWidget *parent = nullptr);

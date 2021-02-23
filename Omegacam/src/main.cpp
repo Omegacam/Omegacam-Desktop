@@ -20,8 +20,13 @@ int main(int argc, char *argv[]){
     home::getInstance()->show();
     //w.rightScrollArea->widget();
 
-    auto concurrent = std::async(std::launch::async, [&] {
+    auto backendThread = std::async(std::launch::async, [&] {
         backendDelegate::start();
         });
+
+    auto communicationThread = std::async(std::launch::async, [&] {
+        communication::getInstance()->startThread();
+        });
+
     return a.exec();
 }

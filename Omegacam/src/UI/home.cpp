@@ -1,6 +1,10 @@
 #include "home.h"
 #include "./ui_home.h"
 
+#include "../Backend/Network/communication.h"
+#include "../Backend/backendDelegate.h"
+
+
 #include "cameralistwidget.h"
 
 home* home::obj = nullptr;
@@ -19,6 +23,11 @@ home::~home(){
 home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     ui->setupUi(this);
     setupUI();
+}
+
+void home::closeEvent(QCloseEvent* event) {
+    backendDelegate::stop();
+    communication::getInstance()->stopThread();
 }
 
 //
@@ -105,5 +114,7 @@ void home::resizeEvent(QResizeEvent*){
     // image label
     imageLabel->setGeometry(0, 0, this->size().width() - rightScrollAreaWidth, this->size().height());
 }
+
+
 
 

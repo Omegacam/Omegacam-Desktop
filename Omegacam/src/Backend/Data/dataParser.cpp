@@ -10,7 +10,7 @@ cameraDataPacket dataManager::parseData(string& rawDataString) {
 	ctx.parseTo(packet);
 
 	//logs::stat("packet data - " + packet.deviceName + " : " + packet.localIp);
-	logs::stat("packet #" + to_string(packet.frameNumber));
+	//logs::stat("packet #" + to_string(packet.frameNumber));
 
 	return packet;
 }

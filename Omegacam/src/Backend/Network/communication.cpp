@@ -1,5 +1,6 @@
 #include "communication.h"
 
+
 communication* communication::obj;
 
 communication* communication::getInstance(){
@@ -17,20 +18,12 @@ communication::~communication(){
 //
 
 bool communication::connect(string address, quint16 port) {
-    if (!isSocketConnected) {
-        socket = new udpsocket();
-        if (socket->connect_socket(address, port)){
-            isSocketConnected = true;
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    else {
+    if (isSocketConnected) {
         logs::crit("Socket already connected. Cannot connect to - " + address + ":" + to_string(port));
         return false;
     }
+    socket = new udpsocket();
+    return (isSocketConnected = socket->connect_socket(address, port));
 }
 
 bool communication::disconnect() {
@@ -45,7 +38,7 @@ bool communication::disconnect() {
     return true;
 }
 
-bool communication::recv(string& buf) {
+/*bool communication::recv(string& buf) { // now using callback to backendDelegate thread
     if (isSocketConnected) {
         //
         socketbuffer buffer;
@@ -59,4 +52,4 @@ bool communication::recv(string& buf) {
         logs::stat("Socket is not connected");
         return false;
     }
-}
+}*/
