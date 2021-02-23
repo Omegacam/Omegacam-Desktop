@@ -2,7 +2,7 @@
 #define _COMMUNICATION_H_
 
 #include "../../common_includes.h"
-#include "udp_socket.h"
+#include "Sockets/udp_socket.h"
 
 class communication
 {

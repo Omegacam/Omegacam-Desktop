@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QUdpSocket>
 #include <QNetworkInterface>
-#include "../../common_includes.h"
+#include "../../../common_includes.h"
 
 struct socketbuffer {
 	QHostAddress addr;

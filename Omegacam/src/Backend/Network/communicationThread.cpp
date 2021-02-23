@@ -26,6 +26,7 @@ void communication::startThread() {
 
                 backendDelegate::updateDataBuffer(string(s_buffer.buffer, s_buffer.buffer.size()));
 
+                // performance metrics
                 c++;
                 auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
                 if (duration >= 1000000) { // 1 sec
@@ -37,8 +38,6 @@ void communication::startThread() {
 
             }
         }
-
-
 
         this_thread::sleep_for(chrono::microseconds(1));
     }
