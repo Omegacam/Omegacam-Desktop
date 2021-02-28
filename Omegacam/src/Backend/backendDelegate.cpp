@@ -21,7 +21,7 @@ void backendDelegate::start() {
 			//logs::stat(rawDataString);
 			
 			parsedDataCallback(dataManager::getInstance()->parseData(rawDataString));
-			
+
 			c++;
 			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
 			if (c == 30) {
@@ -45,5 +45,7 @@ void backendDelegate::stop() {
 }
 
 void backendDelegate::parsedDataCallback(cameraDataPacket& data) { // calls ui func with data from packet
-	home::getInstance()->displayBase64Frame(data.frameData);
+	if (data.frameData != "") {
+		home::getInstance()->displayBase64Frame(data.frameData);
+	}
 }
