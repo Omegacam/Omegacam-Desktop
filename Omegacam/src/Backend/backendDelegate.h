@@ -8,11 +8,17 @@ public:
 	static void start();
 	static void stop();
 
-	static void updateDataBuffer(string& dataString);
+	static void updateRawDataBuffer(string dataString);
+	static void updateParsedDataBuffer(string dataString);
 
 private:
+	//
 	static string rawDataBuffer;
 	static bool hasReceivedRawDataBuffer;
+	//
+	static string parsedDataBuffer;
+	static bool hasReceivedParsedDataBuffer;
+
 
 	static bool isRunning; // to stop this thread from running after the main thread terminates
 

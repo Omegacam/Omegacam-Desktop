@@ -31,7 +31,7 @@ bool udpsocket::connect_socket(string address, quint16 port) {
 			!current_interface.flags().testFlag(QNetworkInterface::IsLoopBack)) {
 
 			if (!socket->joinMulticastGroup(connected_addr, current_interface)) {
-				logs::crit("Failed to join udp socket multicast group " + address + " : " + socket->errorString().toUtf8().constData());
+				logs::crit("Failed to join udp socket multicast group " + address + " on network interface " + current_interface.name().toUtf8().constData() + " : " + socket->errorString().toUtf8().constData());
 				return false;
 			}
 		

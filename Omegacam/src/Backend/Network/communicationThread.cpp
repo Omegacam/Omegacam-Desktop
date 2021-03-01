@@ -24,7 +24,11 @@ void communication::startThread() {
             socketbuffer s_buffer;
             while (socket->recv(s_buffer)) {
 
-                backendDelegate::updateDataBuffer(string(s_buffer.buffer, s_buffer.buffer.size()));
+                string rawData(s_buffer.buffer, s_buffer.buffer.size());
+
+                backendDelegate::updateRawDataBuffer(rawData); 
+
+                //logs::stat(rawData);
 
                 // performance metrics
                 c++;

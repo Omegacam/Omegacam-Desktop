@@ -65,7 +65,7 @@ else()
        "src/Backend/logs.cpp" "src/Backend/logs.h" 
        "src/Backend/Data/dataManager.cpp"
        "src/Backend/Data/dataManager.h" "src/Backend/backendStructs.h"
-       "src/Backend/Data/dataParser.cpp" "src/Backend/Network/Sockets/udp_socket.h" "src/Backend/Network/Sockets/udp_socket.cpp" "src/Backend/Network/communicationThread.cpp")
+       "src/Backend/Data/dataParser.cpp" "src/Backend/Network/Sockets/udp_socket.h" "src/Backend/Network/Sockets/udp_socket.cpp" "src/Backend/Network/communicationThread.cpp" "src/Backend/Data/multipartPacketParser.cpp" "src/Backend/Data/multipartPacketParser.h")
 endif()
 
 target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network)

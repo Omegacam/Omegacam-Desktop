@@ -1,18 +1,18 @@
 #include "dataManager.h"
 
-cameraDataPacket dataManager::parseData(string& rawDataString) {
+cameraDataPacket dataManager::parseToCameraStruct(string& rawDataString) {
 
 	//logs::stat("packet raw data - " + rawDataString);
 
 	JS::ParseContext ctx(formatJSONString(rawDataString));
 
-	cameraDataPacket packet;
-	ctx.parseTo(packet);
+	cameraDataPacket cameraPacket;
+	ctx.parseTo(cameraPacket);
 
 	//logs::stat("packet data - " + packet.deviceName + " : " + packet.localIp);
 	//logs::stat("packet #" + to_string(packet.frameNumber));
 
-	return packet;
+	return cameraPacket;
 }
 
 string dataManager::formatJSONString(string raw) { // removes backslash from json string

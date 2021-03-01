@@ -7,6 +7,7 @@
 #include <chrono>
 
 #include "../UI/home.h"
+#include "Data/multipartPacketParser.h"
 
 bool backendDelegate::isRunning = false;
 
@@ -17,10 +18,22 @@ bool backendDelegate::hasReceivedRawDataBuffer = false;
 
 //
 
-void backendDelegate::updateDataBuffer(string& dataString) {
+string backendDelegate::parsedDataBuffer = "";
+bool backendDelegate::hasReceivedParsedDataBuffer = false;
+
+//
+
+
+void backendDelegate::updateRawDataBuffer(string dataString) {
 	rawDataBuffer = dataString;
 	hasReceivedRawDataBuffer = true;
 }
+
+void backendDelegate::updateParsedDataBuffer(string dataString) {
+	parsedDataBuffer = dataString;
+	hasReceivedParsedDataBuffer = true;
+}
+
 
 void backendDelegate::start() {
 	isRunning = true;
@@ -31,42 +44,26 @@ void backendDelegate::start() {
 	quint64 maxFrame = 0;
 
 	while (isRunning) {
-		/*string rawDataString;
-		if (communication::getInstance()->recv(rawDataString)) {
-			//logs::stat(rawDataString);
-			
-			//parsedDataCallback(dataManager::getInstance()->parseData(rawDataString));
-			
-			//cameraDataPacket packet = dataManager::getInstance()->parseData(rawDataString);
-
-			//maxFrame = max(maxFrame, packet.frameNumber);
-
-			c++;
-			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
-			if (duration >= 1000000) { // 1 sec
-				logs::stat( to_string(c) + " packets in 1 sec = " + to_string(maxFrame) + "th frame");
-				startT = std::chrono::high_resolution_clock::now();
-				c = 0;
-			}
-		}
-		else {
-			//logs::stat("recv error");
-		}*/
 		if (hasReceivedRawDataBuffer) {
-			cameraDataPacket packet = dataManager::getInstance()->parseData(rawDataBuffer);
-			
-			//logs::stat("parsed frame #" + to_string(packet.frameNumber));
-			/*c++;
-			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
-			if (duration >= 1000000) { // 1 sec
-				logs::stat( to_string(c) + " packets in 1 sec");
-				startT = std::chrono::high_resolution_clock::now();
-				c = 0;
-			}*/
+		
+
+			multipartPacketParser::input(rawDataBuffer);
 
 			hasReceivedRawDataBuffer = false;
 			rawDataBuffer = "";
 		}
+
+		if (hasReceivedParsedDataBuffer) {
+
+			//logs::stat("recv full data packet");
+
+			parsedDataCallback(dataManager::getInstance()->parseToCameraStruct(parsedDataBuffer));
+
+			hasReceivedParsedDataBuffer = false;
+			parsedDataBuffer = "";
+		}
+		
+
 		this_thread::sleep_for(chrono::microseconds(1));
 	}
 }
@@ -76,5 +73,10 @@ void backendDelegate::stop() {
 }
 
 void backendDelegate::parsedDataCallback(cameraDataPacket& data) { // calls ui func with data from packet
-	home::getInstance()->displayBase64Frame(data.frameData);
+	if (data.frameData != "") {
+		home::getInstance()->displayBase64Frame(data.frameData);
+	}
+	else {
+		logs::stat("invalid frame data in callback");
+	}
 }
