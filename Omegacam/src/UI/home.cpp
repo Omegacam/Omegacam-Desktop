@@ -84,7 +84,7 @@ void home::displayBase64Frame(std::string raw) {
     QPixmap image;
     image.loadFromData(QByteArray::fromBase64(raw_bytes));
 
-    imageLabel->setPixmap(image);
+    imageLabel->setPixmap(image.scaled(imageLabel->size(), Qt::KeepAspectRatio));
 }
 
 void home::setMainContentStream(){
