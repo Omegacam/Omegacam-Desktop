@@ -7,64 +7,36 @@
 #include <chrono>
 
 #include "../UI/home.h"
-#include "Data/multipartPacketParser.h"
 
 bool backendDelegate::isRunning = false;
 
-//
-
-string backendDelegate::rawDataBuffer = "";
-bool backendDelegate::hasReceivedRawDataBuffer = false;
-
-//
-
-string backendDelegate::parsedDataBuffer = "";
-bool backendDelegate::hasReceivedParsedDataBuffer = false;
-
-//
-
-
-void backendDelegate::updateRawDataBuffer(string dataString) {
-	rawDataBuffer = dataString;
-	hasReceivedRawDataBuffer = true;
-}
-
-void backendDelegate::updateParsedDataBuffer(string dataString) {
-	parsedDataBuffer = dataString;
-	hasReceivedParsedDataBuffer = true;
-}
-
-
 void backendDelegate::start() {
 	isRunning = true;
-	
-	
+	communication::getInstance()->connect("tcp://192.168.1.9:1234");
 	auto startT = std::chrono::high_resolution_clock::now();
 	long c = 0;
-	quint64 maxFrame = 0;
-
 	while (isRunning) {
-		if (hasReceivedRawDataBuffer) {
-		
+		string rawDataString;
+		if (communication::getInstance()->recv(rawDataString)) {
+			//logs::stat(rawDataString);
+			
+			parsedDataCallback(dataManager::getInstance()->parseData(rawDataString));
 
-			multipartPacketParser::input(rawDataBuffer);
-
-			hasReceivedRawDataBuffer = false;
-			rawDataBuffer = "";
+			c++;
+			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
+			if (c == 30) {
+				logs::stat("30 FRAMES = " + to_string(duration) + " microseconds");
+				startT = std::chrono::high_resolution_clock::now();
+				c = 0;
+			}
 		}
-
-		if (hasReceivedParsedDataBuffer) {
-
-			//logs::stat("recv full data packet");
-
-			parsedDataCallback(dataManager::getInstance()->parseToCameraStruct(parsedDataBuffer));
-
-			hasReceivedParsedDataBuffer = false;
-			parsedDataBuffer = "";
+		else if (zmq_errno() == 11){
+		//	logs::stat("no msg recved");
 		}
-		
-
-		this_thread::sleep_for(chrono::microseconds(1));
+		else {
+			logs::stat("msg error - " + to_string(zmq_errno()));
+		}
+		this_thread::sleep_for(chrono::milliseconds(1));
 	}
 }
 
@@ -75,8 +47,5 @@ void backendDelegate::stop() {
 void backendDelegate::parsedDataCallback(cameraDataPacket& data) { // calls ui func with data from packet
 	if (data.frameData != "") {
 		home::getInstance()->displayBase64Frame(data.frameData);
-	}
-	else {
-		logs::stat("invalid frame data in callback");
 	}
 }
