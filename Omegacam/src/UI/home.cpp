@@ -3,6 +3,9 @@
 
 #include "cameralistwidget.h"
 
+#include "../Backend/backendDelegate.h"
+#include "../Backend/Network/communicationThread.h"
+
 home* home::obj = nullptr;
 
 home* home::getInstance() {
@@ -19,6 +22,21 @@ home::~home(){
 home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
     ui->setupUi(this);
     setupUI();
+}
+
+//
+
+void home::closeEvent(QCloseEvent* event) {
+    backendDelegate::stop();
+    communicationThread::stop();
+}
+
+void home::setMainContentStream(){
+    qInfo() << "received event";
+    QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
+    if (senderButton){ // sender is a button
+        qInfo() << "sender is button";
+    }
 }
 
 //
@@ -87,13 +105,6 @@ void home::displayBase64Frame(std::string raw) {
     imageLabel->setPixmap(image.scaled(imageLabel->size(), Qt::KeepAspectRatio));
 }
 
-void home::setMainContentStream(){
-    qInfo() << "received event";
-    QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
-    if (senderButton){ // sender is a button
-        qInfo() << "sender is button";
-    }
-}
 
 void home::resizeEvent(QResizeEvent*){
     

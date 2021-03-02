@@ -21,6 +21,8 @@ public:
     void setMainContentStream();
     void displayBase64Frame(std::string raw);
 
+    void closeEvent(QCloseEvent* event);
+
 private:
     home(QWidget *parent = nullptr);
     ~home();
