@@ -11,10 +11,7 @@ struct cameraDataPacket {
     
     std::string frameData; // base64 encoded jpg
     int frameDataSize;
-
-    quint64 frameNumber;
-
-    JS_OBJ(deviceName, localIp, v_width, v_height, frameData, frameDataSize, frameNumber);
+    JS_OBJ(deviceName, localIp, v_width, v_height, frameData, frameDataSize);
 };
 
 #endif // !_BACKEND_STRUCTS_H_

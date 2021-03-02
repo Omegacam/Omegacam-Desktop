@@ -1,18 +1,17 @@
 #include "dataManager.h"
 
-cameraDataPacket dataManager::parseToCameraStruct(string& rawDataString) {
+cameraDataPacket dataManager::parseData(string& rawDataString) {
 
 	//logs::stat("packet raw data - " + rawDataString);
 
-	JS::ParseContext ctx(formatJSONString(rawDataString));
+	JS::ParseContext ctx(rawDataString);
 
-	cameraDataPacket cameraPacket;
-	ctx.parseTo(cameraPacket);
+	cameraDataPacket packet;
+	ctx.parseTo(packet);
 
-	//logs::stat("packet data - " + packet.deviceName + " : " + packet.localIp);
-	//logs::stat("packet #" + to_string(packet.frameNumber));
+	logs::stat("packet data - " + packet.deviceName + " : " + packet.localIp);
 
-	return cameraPacket;
+	return packet;
 }
 
 string dataManager::formatJSONString(string raw) { // removes backslash from json string
@@ -22,6 +21,5 @@ string dataManager::formatJSONString(string raw) { // removes backslash from jso
 			i--;
 		}
 	}
-	//logs::stat("formatted json - " + raw);
 	return raw;
 }

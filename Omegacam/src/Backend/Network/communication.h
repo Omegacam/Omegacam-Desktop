@@ -2,7 +2,7 @@
 #define _COMMUNICATION_H_
 
 #include "../../common_includes.h"
-#include "Sockets/udp_socket.h"
+#include <zmq.h>
 
 class communication
 {
@@ -10,29 +10,26 @@ public:
     static communication* getInstance();
     //
 
-    bool connect(string address, quint16 port); // address
+    bool connect(string s); // address
     bool disconnect(); // address
-
-    void startThread();
-    void stopThread();
-
-    //bool recv(string& buf);
+    
+    bool recv(string& buf);
 
 private:
     communication();
     ~communication();
     static communication* obj;
+    void printVersion();
     //
-
-    bool isRunningThread = false;
-
-    //
-
-    udpsocket* socket;
-    bool isSocketConnected = false;
     
+    void setupSocket();
+    bool isSocketSetup = false;
+    bool isSocketConnected = false;
     string socketConnectionAddress = "";
-    quint16 socketConnectionPort = 0;
+    //set<string> connectedAddresses; // stores addresses connceted by the socket
+
+    void* ctx = nullptr;
+    void* sub = nullptr;
 
 };
 
