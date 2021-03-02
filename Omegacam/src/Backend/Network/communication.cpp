@@ -24,7 +24,7 @@ communication::~communication(){
 void communication::printVersion() {
     int major, minor, patch;
     zmq_version(&major, &minor, &patch);
-    qInfo() << "version - " << major << "." << minor << "." << patch << endl;
+    qInfo() << "zmq version - " << major << "." << minor << "." << patch << endl;
 }
 
 void communication::setupSocket() {

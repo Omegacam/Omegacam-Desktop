@@ -10,8 +10,8 @@ void communicationThread::start() {
 	
 	if (!communication::getInstance()->connect("tcp://192.168.1.9:1234")) {
 		isRunning = false;
-        logs::crit("COULD NOT CONNECT WITH SOCKET");
-        return;
+		logs::crit("COULD NOT CONNECT WITH SOCKET");
+		return;
 	}
 	
 	auto startT = std::chrono::high_resolution_clock::now();
