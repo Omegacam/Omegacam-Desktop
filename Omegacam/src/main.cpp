@@ -3,6 +3,7 @@
 #include "common_includes.h"
 #include "src/Backend/Network/communication.h"
 #include "src/Backend/backendDelegate.h"
+#include "src/Backend/Network/communicationThread.h"
 
 #include <thread>
 #include <chrono>
@@ -20,8 +21,13 @@ int main(int argc, char *argv[]){
     home::getInstance()->show();
     //w.rightScrollArea->widget();
 
-    auto concurrent = std::async(std::launch::async, [&] {
+    auto backend = std::async(std::launch::async, [&] {
         backendDelegate::start();
         });
+
+    auto communication = std::async(std::launch::async, [&] {
+        communicationThread::start();
+        });
+
     return a.exec();
 }
