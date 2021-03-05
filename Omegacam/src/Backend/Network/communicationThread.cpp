@@ -8,7 +8,7 @@ bool communicationThread::isRunning = false;
 void communicationThread::start() {
 	isRunning = true;
 	
-	if (!communication::getInstance()->connect("tcp://192.168.1.9:1234")) {
+	if (!communication::getInstance()->connect("udp://224.0.0.1:28650")) {
 		isRunning = false;
 		logs::crit("COULD NOT CONNECT WITH SOCKET");
 		return;

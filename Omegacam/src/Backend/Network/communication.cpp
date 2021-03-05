@@ -15,7 +15,7 @@ communication::communication(){
 }
 
 communication::~communication(){
-    zmq_close(sub);
+    zmq_close(dish);
     zmq_term(ctx);
 }
 
@@ -24,30 +24,20 @@ communication::~communication(){
 void communication::printVersion() {
     int major, minor, patch;
     zmq_version(&major, &minor, &patch);
-    qInfo() << "zmq version - " << major << "." << minor << "." << patch << endl;
+    logs::stat("zmq version - " + to_string(major) + "." + to_string(minor) + "." + to_string(patch));
+    logs::stat("zmq has draft - " + to_string(zmq_has("draft")));
 }
 
 void communication::setupSocket() {
     if (!isSocketSetup) {
-        sub = zmq_socket(ctx, ZMQ_SUB);
-        int rc = zmq_setsockopt(sub, ZMQ_SUBSCRIBE, "", 0);
+        dish = zmq_socket(ctx, ZMQ_DISH);
+        /*int rc = zmq_setsockopt(sub, ZMQ_SUBSCRIBE, "", 0);
         if (rc == -1) {
             logs::crit("Failed to set sock option subscribe");
             return;
-        }
-        int t = 1;
-        rc = zmq_setsockopt(sub, ZMQ_CONFLATE, &t, sizeof(t));
-        /*int sz = 0;
-        rc = zmq_setsockopt(sub, ZMQ_RCVHWM, &sz, sizeof(sz));
-        if (rc == -1) {
-            logs::crit("Failed to set sock option rcvhwm");
-            return;
-        }
-        rc = zmq_setsockopt(sub, ZMQ_RCVBUF, &sz, sizeof(sz));
-        if (rc == -1) {
-            logs::crit("Failed to set sock option rcvbuf");
-            return;
         }*/
+        //int t = 1;
+        //int rc = zmq_setsockopt(dish, ZMQ_CONFLATE, &t, sizeof(t));
     }
     isSocketSetup = true;
 }
@@ -55,7 +45,7 @@ void communication::setupSocket() {
 
 bool communication::connect(string s) {
     if (!isSocketConnected) {
-        int rc = zmq_connect(sub, s.c_str());
+        int rc = zmq_bind(dish, s.c_str());
         if (rc == -1) {
             logs::crit("Failed to bind - " + s);
         }
@@ -63,6 +53,12 @@ bool communication::connect(string s) {
             isSocketConnected = true;
             socketConnectionAddress = s;
         }
+
+        rc = zmq_join(dish, "telemetry");
+        if (rc == -1) {
+            logs::crit("Failed to join group telemetry");
+        }
+
         return rc != -1;
     }
     else {
@@ -73,7 +69,7 @@ bool communication::connect(string s) {
 
 bool communication::disconnect() {
     if (isSocketConnected) {
-        int rc = zmq_disconnect(sub, socketConnectionAddress.c_str());
+        int rc = zmq_unbind(dish, socketConnectionAddress.c_str());
         if (rc == -1) {
             logs::crit("Failed to unbind - " + socketConnectionAddress);
         }
@@ -96,7 +92,7 @@ bool communication::recv(string& buf) {
         if (rc == -1) {
             return false;
         }
-        rc = zmq_msg_recv(&msg, sub, ZMQ_NOBLOCK);
+        rc = zmq_msg_recv(&msg, dish, ZMQ_NOBLOCK);
         if (rc == -1) {
             return false;
         }

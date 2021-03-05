@@ -29,7 +29,7 @@ private:
     //set<string> connectedAddresses; // stores addresses connceted by the socket
 
     void* ctx = nullptr;
-    void* sub = nullptr;
+    void* dish = nullptr;
 
 };
 

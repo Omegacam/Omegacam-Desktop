@@ -649,6 +649,8 @@ ZMQ_EXPORT void zmq_threadclose (void *thread_);
 /*  change at ANY time until declared stable.                                 */
 /******************************************************************************/
 
+#define ZMQ_BUILD_DRAFT_API
+
 #ifdef ZMQ_BUILD_DRAFT_API
 
 /*  DRAFT Socket types.                                                       */
