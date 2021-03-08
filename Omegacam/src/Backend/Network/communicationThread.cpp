@@ -36,10 +36,7 @@ void communicationThread::start() {
 			}
 
 		}
-		else if (zmq_errno() == 11) {
-			//	logs::stat("no msg recved");
-		}
-		else {
+		else if (zmq_errno() != 11){
 			logs::stat("msg error - " + to_string(zmq_errno()));
 		}
 
