@@ -4,6 +4,7 @@
 #include "src/Backend/Network/communication.h"
 #include "src/Backend/backendDelegate.h"
 #include "src/Backend/Network/communicationThread.h"
+#include "src/Backend/Network/discoveryCommunicationThread.h"
 
 #include <thread>
 #include <chrono>
@@ -27,6 +28,10 @@ int main(int argc, char *argv[]){
 
     auto communication = std::async(std::launch::async, [&] {
         communicationThread::start();
+        });
+
+    auto discovery = std::async(std::launch::async, [&] {
+        discoveryCommunicationThread::start();
         });
 
     return a.exec();
