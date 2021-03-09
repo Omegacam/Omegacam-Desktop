@@ -1,10 +1,10 @@
 #include "UI/home.h"
 
 #include "common_includes.h"
-#include "src/Backend/Network/communication.h"
+#include "src/Backend/Network/Communication/communication.h"
 #include "src/Backend/backendDelegate.h"
-#include "src/Backend/Network/communicationThread.h"
-#include "src/Backend/Network/discoveryCommunicationThread.h"
+#include "src/Backend/Network/Communication/communicationThread.h"
+#include "src/Backend/Network/DiscoveryCommunication/discoveryCommunicationThread.h"
 
 #include <thread>
 #include <chrono>

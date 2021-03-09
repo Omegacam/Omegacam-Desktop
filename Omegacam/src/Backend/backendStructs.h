@@ -14,4 +14,9 @@ struct cameraDataPacket {
     JS_OBJ(deviceName, localIp, v_width, v_height, frameData, frameDataSize);
 };
 
+struct discoveryDataPacket {
+    std::string deviceName, cameraConnectionIP;
+    quint32 cameraConnectionPort;
+};
+
 #endif // !_BACKEND_STRUCTS_H_

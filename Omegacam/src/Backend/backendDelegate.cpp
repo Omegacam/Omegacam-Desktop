@@ -1,6 +1,6 @@
 #include "backendDelegate.h"
 
-#include "Network/communication.h"
+#include "Network/Communication/communication.h"
 #include "Data/dataManager.h"
 #include "backendStructs.h"
 #include <thread>
@@ -26,7 +26,7 @@ void backendDelegate::start() {
 	while (isRunning) {
 		if (hasRecvDataBuffer) {
 
-			parsedDataCallback(dataManager::getInstance()->parseData(dataBuffer));
+			parsedDataCallback(dataManager::getInstance()->parseCameraData(dataBuffer));
 
 			hasRecvDataBuffer = false;
 			dataBuffer = "";

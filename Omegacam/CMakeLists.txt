@@ -59,9 +59,19 @@ else()
     "src/UI/home.ui"
     "src/UI/cameralistwidget.cpp"
     "src/UI/cameralistwidget.h"
-    "src/Backend/Network/communication.cpp"
-    "src/Backend/Network/communication.h"
-       "src/Backend/backendDelegate.cpp" "src/Backend/backendDelegate.h" "src/Backend/logs.cpp" "src/Backend/logs.h" "src/Backend/Data/dataManager.cpp" "src/Backend/Data/dataManager.h" "src/Backend/backendStructs.h" "src/Backend/Data/dataParser.cpp" "src/Backend/Network/communicationThread.cpp" "src/Backend/Network/communicationThread.h" "src/Backend/Network/discoveryCommunicationThread.h" "src/Backend/Network/discoveryCommunicationThread.cpp")
+    "src/Backend/Network/Communication/communication.cpp"
+    "src/Backend/Network/Communication/communication.h"
+       "src/Backend/backendDelegate.cpp" "src/Backend/backendDelegate.h"
+       "src/Backend/logs.cpp" "src/Backend/logs.h" "src/Backend/Data/dataManager.cpp"
+       "src/Backend/Data/dataManager.h" "src/Backend/backendStructs.h" "src/Backend/Data/dataParser.cpp"
+       "src/Backend/Network/Communication/communicationThread.cpp"
+       "src/Backend/Network/Communication/communicationThread.h"
+       "src/Backend/Network/DiscoveryCommunication/discoveryCommunicationThread.h"
+       "src/Backend/Network/DiscoveryCommunication/discoveryCommunicationThread.cpp"
+       "src/Backend/Network/DiscoveryCommunication/discoveryCommunication.cpp"
+       "src/Backend/Network/DiscoveryCommunication/discoveryCommunication.h"
+       "src/Backend/Network/Sockets/udp_socket.cpp"
+       "src/Backend/Network/Sockets/udp_socket.h")
 endif()
 
 target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network libzmq-v142-mt-4_3_4 libzmq-v142-mt-s-4_3_4)

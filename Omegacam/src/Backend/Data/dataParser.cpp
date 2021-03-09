@@ -1,6 +1,6 @@
 #include "dataManager.h"
 
-cameraDataPacket dataManager::parseData(string& rawDataString) {
+cameraDataPacket dataManager::parseCameraData(string& rawDataString) {
 
 	//logs::stat("packet raw data - " + rawDataString);
 
@@ -9,7 +9,7 @@ cameraDataPacket dataManager::parseData(string& rawDataString) {
 	cameraDataPacket packet;
 	ctx.parseTo(packet);
 
-	logs::stat("packet data - " + packet.deviceName + " : " + packet.localIp);
+	//logs::stat("packet data - " + packet.deviceName + " : " + packet.localIp);
 
 	return packet;
 }

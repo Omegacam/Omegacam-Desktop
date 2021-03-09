@@ -1,14 +1,14 @@
 #include "communicationThread.h"
 #include "communication.h"
 
-#include "../backendDelegate.h"
+#include "../../backendDelegate.h"
 
 bool communicationThread::isRunning = false;
 
 void communicationThread::start() {
 	isRunning = true;
 	
-	if (!communication::getInstance()->connect("tcp://192.168.1.9:1234")) {
+	if (!communication::getInstance()->connect("tcp://192.168.1.9:5000")) {
 		isRunning = false;
 		logs::crit("COULD NOT CONNECT WITH SOCKET");
 		return;

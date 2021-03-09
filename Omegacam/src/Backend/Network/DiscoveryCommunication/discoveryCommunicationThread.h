@@ -1,7 +1,7 @@
 #ifndef _DISCOVERY_COMMUNICATION_THREAD_H_
 #define _DISCOVERY_COMMUNICATION_THREAD_H_
 
-#include "../../common_includes.h"
+#include "../../../common_includes.h"
 
 #include <chrono>
 #include <thread>

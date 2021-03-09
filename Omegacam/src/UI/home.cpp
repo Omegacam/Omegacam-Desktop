@@ -4,7 +4,8 @@
 #include "cameralistwidget.h"
 
 #include "../Backend/backendDelegate.h"
-#include "../Backend/Network/communicationThread.h"
+#include "../Backend/Network/Communication/communicationThread.h"
+#include "../Backend/Network/DiscoveryCommunication/discoveryCommunicationThread.h"
 
 home* home::obj = nullptr;
 
@@ -29,6 +30,7 @@ home::home(QWidget *parent):QMainWindow(parent), ui(new Ui::home){
 void home::closeEvent(QCloseEvent* event) {
     backendDelegate::stop();
     communicationThread::stop();
+    discoveryCommunicationThread::stop();
 }
 
 void home::setMainContentStream(){

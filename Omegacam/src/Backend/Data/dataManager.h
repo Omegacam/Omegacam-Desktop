@@ -9,8 +9,9 @@ public:
 	static dataManager* getInstance();
 	// 
 
-	cameraDataPacket parseData(string& rawDataString);
+	cameraDataPacket parseCameraData(string& rawDataString);
 
+	
 private:
 	dataManager();
 	~dataManager();

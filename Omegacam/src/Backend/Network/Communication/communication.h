@@ -1,11 +1,10 @@
 #ifndef _COMMUNICATION_H_
 #define _COMMUNICATION_H_
 
-#include "../../common_includes.h"
+#include "../../../common_includes.h"
 #include <zmq.h>
 
-class communication
-{
+class communication{
 public:
     static communication* getInstance();
     //
