@@ -16,6 +16,7 @@ class udpsocket : public QObject {
 	Q_OBJECT
 public:
 	udpsocket(QObject* parent = 0); // default constructor
+	~udpsocket();
 	void send(QByteArray data);
 	bool connect_socket(string address, quint16 port);
 	bool recv(socketbuffer& recvbuffer);

@@ -11,7 +11,7 @@ public:
 	//
 
 	bool getSocketConnected();
-
+	bool recv(socketbuffer& s_buffer);
 
 private:
 	discoveryCommunication();
@@ -21,13 +21,14 @@ private:
 	//
 
 	bool connect(string address, quint16 port);
+	bool disconnect();
 
 	//
 	udpsocket* socket;
 	bool isSocketConnected = false;
 
-	string socketConnectionAddress = "224.1.1.1";
-	quint16 socketConnectionPort = 5555;
+	const string socketConnectionAddress = "224.1.1.1";
+	const quint16 socketConnectionPort = 5555;
 
 };
 

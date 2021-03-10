@@ -8,6 +8,17 @@ void discoveryCommunicationThread::start() {
 
 	while (isRunning) {
 
+		if (discoveryCommunication::getInstance()->getSocketConnected()) {
+			socketbuffer s_buffer;
+			while (discoveryCommunication::getInstance()->recv(s_buffer)) {
+
+				string rawData(s_buffer.buffer, s_buffer.buffer.size());
+
+				logs::stat("recv multicast - " + rawData);
+
+			}
+		}
+
 		this_thread::sleep_for(chrono::seconds(1));
 	}
 }

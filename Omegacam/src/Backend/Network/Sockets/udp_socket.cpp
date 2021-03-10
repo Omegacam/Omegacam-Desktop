@@ -3,6 +3,9 @@
 //https://www.bogotobogo.com/Qt/Qt5_QUdpSocket.php
 
 udpsocket::udpsocket(QObject* parent) : QObject(parent) {}
+udpsocket::~udpsocket(){
+	delete socket;
+}
 
 bool udpsocket::connect_socket(string address, quint16 port) {
 	connected_addr = QHostAddress(QString::fromStdString(address));
@@ -40,7 +43,7 @@ bool udpsocket::connect_socket(string address, quint16 port) {
 
 	//socket->setSocketOption(QAbstractSocket::ReceiveBufferSizeSocketOption, 1);
 
-	//logs::stat("success setup socket with address - " + address + ":" + to_string(port));
+	logs::stat("success setup socket with address - " + address + ":" + to_string(port));
 	//connect(socket, SIGNAL(readyRead()), this, SLOT(recv()));
 
 	return true;
