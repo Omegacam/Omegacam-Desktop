@@ -13,6 +13,8 @@ public:
 	bool getSocketConnected();
 	bool recv(socketbuffer& s_buffer);
 
+	bool reconnect(string address, quint16 port); // to choose a new recv multicast address
+
 private:
 	discoveryCommunication();
 	~discoveryCommunication();

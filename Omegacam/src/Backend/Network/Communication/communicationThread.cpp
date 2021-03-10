@@ -13,9 +13,6 @@ void communicationThread::start() {
 		logs::crit("COULD NOT CONNECT WITH SOCKET");
 		return;
 	}
-	
-	auto startT = std::chrono::high_resolution_clock::now();
-	long c = 0;
 
 	while (isRunning) {
 
@@ -25,16 +22,8 @@ void communicationThread::start() {
 
 			//dataManager::getInstance()->parseData(rawDataString);
 
-			backendDelegate::updateDataBuffer(rawDataString);
-
-			c++;
-			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - startT).count();
-			if (c == 30) {
-				logs::stat("30 FRAMES = " + to_string(duration) + " microseconds");
-				startT = std::chrono::high_resolution_clock::now();
-				c = 0;
-			}
-
+			backendDelegate::updateCameraDataBuffer(rawDataString);
+		
 		}
 		else if (zmq_errno() != 11){
 			logs::stat("msg error - " + to_string(zmq_errno()));

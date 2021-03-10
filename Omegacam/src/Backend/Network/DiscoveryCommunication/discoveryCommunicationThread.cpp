@@ -1,6 +1,8 @@
 #include "discoveryCommunicationThread.h"
 #include "discoveryCommunication.h"
 
+#include "../../backendDelegate.h"
+
 bool discoveryCommunicationThread::isRunning = false;
 
 void discoveryCommunicationThread::start() {
@@ -9,14 +11,20 @@ void discoveryCommunicationThread::start() {
 	while (isRunning) {
 
 		if (discoveryCommunication::getInstance()->getSocketConnected()) {
+			
+			vector<string> b;
+
 			socketbuffer s_buffer;
 			while (discoveryCommunication::getInstance()->recv(s_buffer)) {
 
-				string rawData(s_buffer.buffer, s_buffer.buffer.size());
-
-				logs::stat("recv multicast - " + rawData);
-
+				b.push_back(string(s_buffer.buffer, s_buffer.buffer.size()));
+				//logs::stat("recv multicast - " + rawData);
 			}
+			
+			if (b.size()) {
+				backendDelegate::updateDiscoveryData(b);
+			}
+
 		}
 
 		this_thread::sleep_for(chrono::seconds(1));

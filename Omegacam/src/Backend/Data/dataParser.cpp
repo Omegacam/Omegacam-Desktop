@@ -2,14 +2,22 @@
 
 cameraDataPacket dataManager::parseCameraData(string& rawDataString) {
 
-	//logs::stat("packet raw data - " + rawDataString);
-
 	JS::ParseContext ctx(rawDataString);
 
 	cameraDataPacket packet;
 	ctx.parseTo(packet);
 
 	//logs::stat("packet data - " + packet.deviceName + " : " + packet.localIp);
+
+	return packet;
+}
+
+discoveryDataPacket dataManager::parseDiscoveryData(string& rawDataString) {
+
+	JS::ParseContext ctx(rawDataString);
+
+	discoveryDataPacket packet;
+	ctx.parseTo(packet);
 
 	return packet;
 }

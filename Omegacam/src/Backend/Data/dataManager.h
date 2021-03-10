@@ -11,6 +11,7 @@ public:
 
 	cameraDataPacket parseCameraData(string& rawDataString);
 
+	discoveryDataPacket parseDiscoveryData(string& rawDataString);
 	
 private:
 	dataManager();

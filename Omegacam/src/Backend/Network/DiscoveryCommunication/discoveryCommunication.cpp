@@ -36,6 +36,11 @@ bool discoveryCommunication::recv(socketbuffer& s_buffer) {
 	return socket->recv(s_buffer);
 }
 
+bool discoveryCommunication::reconnect(string address, quint16 port) {
+	disconnect();
+	return connect(address, port);
+}
+
 bool discoveryCommunication::connect(string address, quint16 port) {
     if (isSocketConnected) {
         logs::crit("Socket already connected. Cannot connect to - " + address + ":" + to_string(port));

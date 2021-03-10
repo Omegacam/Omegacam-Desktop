@@ -8,15 +8,21 @@ public:
 	static void start();
 	static void stop();
 
-	static void updateDataBuffer(string data);
+	static void updateCameraDataBuffer(string data);
+	static void updateDiscoveryData(vector<string> data);
 
 private:
 	static bool isRunning; // to stop this thread from running after the main thread terminates
 
-	static string dataBuffer;
-	static bool hasRecvDataBuffer;
+	//
 
-	static void parsedDataCallback(cameraDataPacket& data); // uses the parsed data and calls UI functions
+	static string cameraDataBuffer;
+	static bool hasRecvCameraDataBuffer;
+
+	//
+
+	static void parsedCameraDataCallback(cameraDataPacket& data); // uses the parsed data and calls UI functions
+	static void parsedDiscoveryDataCallback(vector<discoveryDataPacket>& data);
 };
 
 #endif // !_BACKEND_DELEGATE_H_
