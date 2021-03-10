@@ -9,6 +9,8 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class home; }
 QT_END_NAMESPACE
 
+
+class CameraListWidget;
 class home : public QMainWindow{
     Q_OBJECT
 
@@ -18,10 +20,12 @@ public:
 
     QScrollArea* rightScrollArea = nullptr;
 
-    void setMainContentStream();
+    //void setMainContentStream();
     void displayBase64Frame(std::string raw);
 
     void closeEvent(QCloseEvent* event);
+
+    CameraListWidget* getCameraListWidget();
 
 private:
     home(QWidget *parent = nullptr);
@@ -34,6 +38,8 @@ private:
 
     double rightScrollAreaWidthRatio = 0.20;
     int rightScrollAreaWidth = 100;
+
+    CameraListWidget* cameraList = nullptr;
 
     QLabel* imageLabel = nullptr; // used to display images
 

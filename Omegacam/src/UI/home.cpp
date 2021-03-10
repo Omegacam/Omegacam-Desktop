@@ -33,13 +33,17 @@ void home::closeEvent(QCloseEvent* event) {
     discoveryCommunicationThread::stop();
 }
 
-void home::setMainContentStream(){
-    qInfo() << "received event";
-    QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
-    if (senderButton){ // sender is a button
-        qInfo() << "sender is button";
-    }
+void home::resizeEvent(QResizeEvent*){
+    
+    // right scroll area
+    rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
+    rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
+    rightScrollArea->widget()->resize(rightScrollArea->size().width(), rightScrollArea->size().height());
+
+    // image label
+    imageLabel->setGeometry(0, 0, this->size().width() - rightScrollAreaWidth, this->size().height());
 }
+
 
 //
 
@@ -50,7 +54,7 @@ void home::setupUI() {
     rightScrollArea->setFrameShape(QFrame::NoFrame);
     rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
 
-    CameraListWidget *cameraList = new CameraListWidget(rightScrollArea, this);
+    cameraList = new CameraListWidget(rightScrollArea, this);
 
     rightScrollArea->setWidget(cameraList);
     rightScrollArea->setWidgetResizable(true);
@@ -107,16 +111,15 @@ void home::displayBase64Frame(std::string raw) {
     imageLabel->setPixmap(image.scaled(imageLabel->size(), Qt::KeepAspectRatio));
 }
 
-
-void home::resizeEvent(QResizeEvent*){
-    
-    // right scroll area
-    rightScrollAreaWidth = this->size().width() * rightScrollAreaWidthRatio;
-    rightScrollArea->setGeometry(this->size().width() - rightScrollAreaWidth, 0, rightScrollAreaWidth, this->size().height());
-    rightScrollArea->widget()->resize(rightScrollArea->size().width(), rightScrollArea->size().height());
-
-    // image label
-    imageLabel->setGeometry(0, 0, this->size().width() - rightScrollAreaWidth, this->size().height());
+CameraListWidget* home::getCameraListWidget() {
+    return cameraList;
 }
 
+/*void home::setMainContentStream(){
+    qInfo() << "received event";
+    QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
+    if (senderButton){ // sender is a button
+        qInfo() << "sender is button";
+    }
+}*/
 

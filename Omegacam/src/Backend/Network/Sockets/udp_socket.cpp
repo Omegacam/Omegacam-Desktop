@@ -43,7 +43,7 @@ bool udpsocket::connect_socket(string address, quint16 port) {
 
 	//socket->setSocketOption(QAbstractSocket::ReceiveBufferSizeSocketOption, 1);
 
-	logs::stat("success setup socket with address - " + address + ":" + to_string(port));
+	logs::stat("Successful udp multicast socket setup with address - " + address + ":" + to_string(port));
 	//connect(socket, SIGNAL(readyRead()), this, SLOT(recv()));
 
 	return true;

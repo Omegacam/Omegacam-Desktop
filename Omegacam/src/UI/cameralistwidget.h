@@ -3,14 +3,18 @@
 
 #include <QWidget>
 #include "../common_includes.h"
-#include "home.h"
 
+#include "../Backend/backendStructs.h"
+
+class home;
 class CameraListWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit CameraListWidget(QWidget *parent = nullptr, home *rootparent = nullptr);
     ~CameraListWidget();
+
+    void updateList(vector<discoveryDataPacket> data);
 
 private:
     QPushButton* CreateChildButton(int num, home *rootparent);

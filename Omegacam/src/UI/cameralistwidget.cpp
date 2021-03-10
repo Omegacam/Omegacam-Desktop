@@ -24,6 +24,14 @@ CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(
     this->show();
 }
 
+CameraListWidget::~CameraListWidget() {}
+
+//
+
+void CameraListWidget::updateList(vector<discoveryDataPacket> data) {
+    logs::stat("update list called");
+}
+
 QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
     QPushButton *c = new QPushButton(this);
 
@@ -43,7 +51,7 @@ QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
 
     c->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
-    connect(c, &QPushButton::clicked, rootparent, &home::setMainContentStream);
+    //connect(c, &QPushButton::clicked, rootparent, &home::setMainContentStream);
     return c;
 }
 
@@ -59,6 +67,3 @@ void CameraListWidget::resizeEvent(QResizeEvent*){
     }
 }
 
-CameraListWidget::~CameraListWidget(){
-
-}

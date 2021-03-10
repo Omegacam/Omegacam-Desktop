@@ -9,6 +9,7 @@
 #include <unordered_set>
 
 #include "../UI/home.h"
+#include "../UI/cameralistwidget.h"
 
 bool backendDelegate::isRunning = false;
 
@@ -66,4 +67,7 @@ void backendDelegate::parsedDiscoveryDataCallback(vector<discoveryDataPacket>& d
 	for (discoveryDataPacket i : data) {
 		logs::stat("device name - " + i.deviceName + " - " + i.cameraConnectionIP + ":" + to_string(i.cameraConnectionPort));
 	}
+
+	home::getInstance()->getCameraListWidget()->updateList(data);
+
 }
