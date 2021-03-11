@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QColor>
 #include <QLabel>
+#include <QThread>
 #include <QImage>
 #include <vector>
 #include <string>

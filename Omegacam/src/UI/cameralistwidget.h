@@ -16,12 +16,19 @@ public:
 
     void updateList(vector<discoveryDataPacket> data);
 
+signals:
+public slots:
+    void CreateChildButton(int num);
+
 private:
-    QPushButton* CreateChildButton(int num, home *rootparent);
     QWidget* parentptr = nullptr;
+    home* homeptr = nullptr;
 
     void resizeEvent(QResizeEvent*);
-signals:
+
+    void clearList();
+
+    void clearLayout(QLayout* layout);
 
 };
 

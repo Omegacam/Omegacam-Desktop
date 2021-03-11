@@ -6,6 +6,7 @@
 CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(parent){
 
     this->parentptr = parent;
+    this->homeptr = rootparent;
 
     this->setAutoFillBackground(true);
     QPalette p;
@@ -13,13 +14,15 @@ CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(
     this->setPalette(p);
 
     QVBoxLayout *layout = new QVBoxLayout(this);
+   
     layout->setContentsMargins(10, 10, 10, 10);
 
+    this->setLayout(layout);
+    
     for (int i = 0; i < 20; i++){
-       layout->addWidget(CreateChildButton(i, rootparent));
+       CreateChildButton(i);
     }
 
-    this->setLayout(layout);
 
     this->show();
 }
@@ -30,11 +33,35 @@ CameraListWidget::~CameraListWidget() {}
 
 void CameraListWidget::updateList(vector<discoveryDataPacket> data) {
     logs::stat("update list called");
+    
+    clearList();
+
+    for (int i = 0; i < 10; i++) {
+//        this->layout()->addWidget(CreateChildButton(i));
+        QMetaObject::invokeMethod(this, "CreateChildButton", Q_ARG(int, i));
+    }
 }
 
-QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
-    QPushButton *c = new QPushButton(this);
+void CameraListWidget::clearList() {
+    clearLayout(this->layout());
+}
 
+void CameraListWidget::clearLayout(QLayout* layout) {
+    while (QLayoutItem* item = layout->takeAt(0)) {
+        QWidget* widget;
+        if (widget = item->widget()) {
+            widget->deleteLater();
+        }
+        if (QLayout* childLayout = item->layout()) {
+            clearLayout(childLayout);
+        }
+        delete item;
+    }
+}
+
+void CameraListWidget::CreateChildButton(int num){
+    QPushButton *c = new QPushButton();
+    
     QLabel *title = new QLabel(QString::fromStdString("button #" + std::to_string(num) + " LONG LONG LONG LONG LONG LONG LONG LONG LONG TEXT"));
     title->setWordWrap(true);
 
@@ -51,8 +78,10 @@ QPushButton* CameraListWidget::CreateChildButton(int num, home *rootparent){
 
     c->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
+    logs::stat("create child button " + to_string(num));
+
     //connect(c, &QPushButton::clicked, rootparent, &home::setMainContentStream);
-    return c;
+    this->layout()->addWidget(c);
 }
 
 void CameraListWidget::resizeEvent(QResizeEvent*){
