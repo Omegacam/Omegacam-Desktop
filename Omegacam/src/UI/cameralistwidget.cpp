@@ -103,7 +103,7 @@ void CameraListWidget::updateButton(CameraPushButton* button, discoveryDataPacke
     if (widget) {
         QLabel* title = dynamic_cast<QLabel*>(widget);
         if (title) {
-            title->setText(QString::fromStdString(data.deviceName));
+            title->setText(QString::fromStdString(data.deviceName + "\n" + data.cameraConnectionIP));
             button->discoveryData = data;
         }
         else {
@@ -118,8 +118,9 @@ void CameraListWidget::updateButton(CameraPushButton* button, discoveryDataPacke
 void CameraListWidget::CreateChildButton(discoveryDataPacket data){
     CameraPushButton *c = new CameraPushButton();
     
-    QLabel *title = new QLabel(QString::fromStdString(data.deviceName));
+    QLabel *title = new QLabel(QString::fromStdString(data.deviceName + "\n" + data.cameraConnectionIP));
     title->setWordWrap(true);
+    title->setAlignment(Qt::AlignCenter);
 
     QHBoxLayout *titleLayout = new QHBoxLayout(c);
     titleLayout->addWidget(title, 0, Qt::AlignHCenter);
