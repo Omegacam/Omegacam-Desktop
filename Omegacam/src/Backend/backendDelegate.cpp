@@ -68,9 +68,9 @@ void backendDelegate::parsedCameraDataCallback(cameraDataPacket& data) { // call
 }
 
 void backendDelegate::parsedDiscoveryDataCallback(vector<discoveryDataPacket>& data) {
-	for (discoveryDataPacket i : data) {
+	/*for (discoveryDataPacket i : data) {
 		logs::stat("device name - " + i.deviceName + " - " + i.cameraConnectionIP + ":" + to_string(i.cameraConnectionPort));
-	}
+	}*/
 
 	home::getInstance()->getCameraListWidget()->updateList(data);
 

@@ -22,7 +22,7 @@ public slots:
     void CreateChildButton(discoveryDataPacket data);
 
 private slots:
-    void updateCameraStream();
+    void handleListButtonPress();
 
 private:
     QWidget* parentptr = nullptr;
@@ -34,6 +34,8 @@ private:
 
     void clearList();
     void updateButton(CameraPushButton* button, discoveryDataPacket data);
+
+    void updateCameraStream(discoveryDataPacket data);
 
 };
 

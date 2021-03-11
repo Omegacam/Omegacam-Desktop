@@ -36,7 +36,7 @@ CameraListWidget::~CameraListWidget() {}
 //
 
 void CameraListWidget::updateList(vector<discoveryDataPacket> data) {
-    logs::stat("update list called - " + to_string(data.size()));
+    //logs::stat("update list called - " + to_string(data.size()));
     
     //clearList();
 
@@ -59,7 +59,7 @@ void CameraListWidget::updateList(vector<discoveryDataPacket> data) {
 
                 CameraPushButton* button = dynamic_cast<CameraPushButton*>(item->widget());
                 if (button) {
-                    logs::stat("updated button #" + to_string(i + 1));
+                    //logs::stat("updated button #" + to_string(i + 1));
                     updateButton(button, data[i]);
                 }
                 else {
@@ -69,7 +69,7 @@ void CameraListWidget::updateList(vector<discoveryDataPacket> data) {
             }
             else { // remove current button as it's left over
 
-                logs::stat("removing button #" + to_string(i + 1));
+                //logs::stat("removing button #" + to_string(i + 1));
                 item->widget()->deleteLater();
 
                 if (QLayout* childLayout = item->layout()) { 
@@ -89,7 +89,7 @@ void CameraListWidget::updateList(vector<discoveryDataPacket> data) {
     // now, we must add any extra buttons left over
     if (listSize < data.size()) {
         for (int i = listSize; i < data.size(); i++) {
-            logs::stat("creating new button #" + to_string(i + 1));
+            //logs::stat("creating new button #" + to_string(i + 1));
             QMetaObject::invokeMethod(this, "CreateChildButton", Q_ARG(discoveryDataPacket, data[i]));
         }
     }
@@ -137,24 +137,33 @@ void CameraListWidget::CreateChildButton(discoveryDataPacket data){
     c->discoveryData = data;
 
     //logs::stat("create child button " + to_string(num));
-    connect(c, &CameraPushButton::clicked, this, &CameraListWidget::updateCameraStream);
+    connect(c, &CameraPushButton::clicked, this, &CameraListWidget::handleListButtonPress);
     
     this->layout()->addWidget(c);
 }
 
 //
 
-void CameraListWidget::updateCameraStream() {
+void CameraListWidget::handleListButtonPress() {
     CameraPushButton* senderButton = dynamic_cast<CameraPushButton*>(sender());
     if (senderButton) {
         //logs::stat("got a camerapushbutton - " + senderButton->discoveryData.deviceName);
-        
-        if (communication::getInstance()->getIsSocketConnected()) {
-            communication::getInstance()->disconnect();
-        }
+    
+        updateCameraStream(senderButton->discoveryData);
 
-        communication::getInstance()->connect("tcp://" + senderButton->discoveryData.cameraConnectionIP + ":" + to_string(senderButton->discoveryData.cameraConnectionPort));
+     }
+}
 
+void CameraListWidget::updateCameraStream(discoveryDataPacket data) {
+    if (communication::getInstance()->getIsSocketConnected()) {
+        communication::getInstance()->disconnect();
+    }
+
+    if (!communication::getInstance()->connect("tcp://" + data.cameraConnectionIP + ":" + to_string(data.cameraConnectionPort))){
+        logs::crit("unable to connect to camera stream from device name " + data.deviceName);
+    }
+    else {
+        logs::stat("successful connection to camera stream " + data.deviceName);
     }
 }
 
