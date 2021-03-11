@@ -27,6 +27,10 @@ void communication::printVersion() {
     logs::stat("zmq version - " + to_string( major ) +  "." +  to_string( minor ) + "." + to_string( patch ));
 }
 
+bool communication::getIsSocketConnected() {
+    return isSocketConnected;
+}
+
 void communication::setupSocket() {
     if (!isSocketSetup) {
         sub = zmq_socket(ctx, ZMQ_SUB);

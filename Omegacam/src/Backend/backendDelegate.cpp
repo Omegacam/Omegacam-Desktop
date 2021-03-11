@@ -35,6 +35,10 @@ void backendDelegate::updateDiscoveryData(vector<string> data) {
 		v.push_back(dataManager::getInstance()->parseDiscoveryData(i));
 	}
 
+	sort(begin(v), end(v), [](discoveryDataPacket& a, discoveryDataPacket& b) { // sort devices according to name
+		return a.deviceName < b.deviceName;
+		});
+
 	parsedDiscoveryDataCallback(v);
 }
 

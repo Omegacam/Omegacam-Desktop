@@ -14,6 +14,8 @@ public:
     
     bool recv(string& buf);
 
+    bool getIsSocketConnected();
+
 private:
     communication();
     ~communication();

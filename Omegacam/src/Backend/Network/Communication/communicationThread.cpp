@@ -8,11 +8,11 @@ bool communicationThread::isRunning = false;
 void communicationThread::start() {
 	isRunning = true;
 	
-	if (!communication::getInstance()->connect("tcp://192.168.1.9:5000")) {
+	/*if (!communication::getInstance()->connect("tcp://192.168.1.9:5000")) {
 		isRunning = false;
 		logs::crit("COULD NOT CONNECT WITH SOCKET");
 		return;
-	}
+	}*/
 
 	while (isRunning) {
 
@@ -25,7 +25,7 @@ void communicationThread::start() {
 			backendDelegate::updateCameraDataBuffer(rawDataString);
 		
 		}
-		else if (zmq_errno() != 11){
+		else if (communication::getInstance()->getIsSocketConnected() && zmq_errno() != 11){
 			logs::stat("msg error - " + to_string(zmq_errno()));
 		}
 

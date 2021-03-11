@@ -4,6 +4,8 @@
 
 #include "../common_includes.h"
 
+#include "../Backend/Network/Communication/communication.h"
+
 CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(parent){
 
     this->parentptr = parent;
@@ -145,7 +147,14 @@ void CameraListWidget::CreateChildButton(discoveryDataPacket data){
 void CameraListWidget::updateCameraStream() {
     CameraPushButton* senderButton = dynamic_cast<CameraPushButton*>(sender());
     if (senderButton) {
-        logs::stat("got a camerapushbutton - " + senderButton->discoveryData.deviceName);
+        //logs::stat("got a camerapushbutton - " + senderButton->discoveryData.deviceName);
+        
+        if (communication::getInstance()->getIsSocketConnected()) {
+            communication::getInstance()->disconnect();
+        }
+
+        communication::getInstance()->connect("tcp://" + senderButton->discoveryData.cameraConnectionIP + ":" + to_string(senderButton->discoveryData.cameraConnectionPort));
+
     }
 }
 
