@@ -1,5 +1,6 @@
 #include "cameralistwidget.h"
 #include "home.h"
+#include "miscellaneous.h"
 
 #include "../common_includes.h"
 
@@ -19,12 +20,13 @@ CameraListWidget::CameraListWidget(QWidget *parent, home *rootparent) : QWidget(
 
     this->setLayout(layout);
     
-    for (int i = 0; i < 20; i++){
+    /*for (int i = 0; i < 20; i++){
        CreateChildButton(i);
-    }
-
+    }*/
 
     this->show();
+
+    qRegisterMetaType<discoveryDataPacket>("discoveryDataPacket");
 }
 
 CameraListWidget::~CameraListWidget() {}
@@ -32,37 +34,89 @@ CameraListWidget::~CameraListWidget() {}
 //
 
 void CameraListWidget::updateList(vector<discoveryDataPacket> data) {
-    logs::stat("update list called");
+    logs::stat("update list called - " + to_string(data.size()));
     
-    clearList();
+    //clearList();
 
-    for (int i = 0; i < 10; i++) {
+    /*for (discoveryDataPacket i : data) {
 //        this->layout()->addWidget(CreateChildButton(i));
-        QMetaObject::invokeMethod(this, "CreateChildButton", Q_ARG(int, i));
-    }
-}
+        QMetaObject::invokeMethod(this, "CreateChildButton", Q_ARG(discoveryDataPacket, i));
+    }*/
 
-void CameraListWidget::clearList() {
-    clearLayout(this->layout());
-}
+    for (int i = 0; i < listSize; i++) {
+        QLayoutItem* item = this->layout()->itemAt(i);
+        if (item) {
+           
+            
+            if (!item->widget()) { // checks if widget is valid
+                logs::crit("Camera list item #" + to_string(i + 1) + " doesn't have a valid widget");
+                continue;
+            }
 
-void CameraListWidget::clearLayout(QLayout* layout) {
-    while (QLayoutItem* item = layout->takeAt(0)) {
-        QWidget* widget;
-        if (widget = item->widget()) {
-            widget->deleteLater();
-        }
-        if (QLayout* childLayout = item->layout()) {
-            clearLayout(childLayout);
-        }
-        delete item;
-    }
-}
+            if (i < data.size()) { // only need to update current button
 
-void CameraListWidget::CreateChildButton(int num){
-    QPushButton *c = new QPushButton();
+                CameraPushButton* button = dynamic_cast<CameraPushButton*>(item->widget());
+                if (button) {
+                    logs::stat("updated button #" + to_string(i + 1));
+                    updateButton(button, data[i]);
+                }
+                else {
+                    logs::crit("Error in casting camera list button #" + to_string(i + 1));
+                }
     
-    QLabel *title = new QLabel(QString::fromStdString("button #" + std::to_string(num) + " LONG LONG LONG LONG LONG LONG LONG LONG LONG TEXT"));
+            }
+            else { // remove current button as it's left over
+
+                logs::stat("removing button #" + to_string(i + 1));
+                item->widget()->deleteLater();
+
+                if (QLayout* childLayout = item->layout()) { 
+
+                    uimisc::clearLayout(childLayout);
+
+                }
+
+            }
+
+        }
+        else {
+            logs::crit("No QLayoutItem found at position #" + to_string(i));
+        }
+    }
+
+    // now, we must add any extra buttons left over
+    if (listSize < data.size()) {
+        for (int i = listSize; i < data.size(); i++) {
+            logs::stat("creating new button #" + to_string(i + 1));
+            QMetaObject::invokeMethod(this, "CreateChildButton", Q_ARG(discoveryDataPacket, data[i]));
+        }
+    }
+
+    listSize = data.size();
+}
+
+void CameraListWidget::updateButton(CameraPushButton* button, discoveryDataPacket data) {
+    QLayoutItem* item = button->layout()->itemAt(0);
+    QWidget* widget = item->widget();
+    if (widget) {
+        QLabel* title = dynamic_cast<QLabel*>(widget);
+        if (title) {
+            title->setText(QString::fromStdString(data.deviceName));
+            button->discoveryData = data;
+        }
+        else {
+            logs::crit("update button has null title widget");
+        }
+    }
+    else {
+        logs::crit("update button has null widget pointer");
+    }
+}
+
+void CameraListWidget::CreateChildButton(discoveryDataPacket data){
+    CameraPushButton *c = new CameraPushButton();
+    
+    QLabel *title = new QLabel(QString::fromStdString(data.deviceName));
     title->setWordWrap(true);
 
     QHBoxLayout *titleLayout = new QHBoxLayout(c);
@@ -78,10 +132,25 @@ void CameraListWidget::CreateChildButton(int num){
 
     c->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
-    logs::stat("create child button " + to_string(num));
+    c->discoveryData = data;
 
-    //connect(c, &QPushButton::clicked, rootparent, &home::setMainContentStream);
+    //logs::stat("create child button " + to_string(num));
+    connect(c, &CameraPushButton::clicked, this, &CameraListWidget::updateCameraStream);
+    
     this->layout()->addWidget(c);
+}
+
+//
+
+void CameraListWidget::updateCameraStream() {
+    CameraPushButton* senderButton = dynamic_cast<CameraPushButton*>(sender());
+    if (senderButton) {
+        logs::stat("got a camerapushbutton - " + senderButton->discoveryData.deviceName);
+    }
+}
+
+void CameraListWidget::clearList() {
+    uimisc::clearLayout(this->layout());
 }
 
 void CameraListWidget::resizeEvent(QResizeEvent*){
@@ -91,7 +160,7 @@ void CameraListWidget::resizeEvent(QResizeEvent*){
             button->setMaximumWidth(this->size().width());
         }
         else{
-            logs::crit("Non button found");
+            logs::crit("Non button found in layout while resizing");
         }
     }
 }

@@ -6,6 +6,8 @@
 
 #include "../Backend/backendStructs.h"
 
+#include "Custom/CameraPushButton.h"
+
 class home;
 class CameraListWidget : public QWidget
 {
@@ -16,19 +18,22 @@ public:
 
     void updateList(vector<discoveryDataPacket> data);
 
-signals:
 public slots:
-    void CreateChildButton(int num);
+    void CreateChildButton(discoveryDataPacket data);
+
+private slots:
+    void updateCameraStream();
 
 private:
     QWidget* parentptr = nullptr;
     home* homeptr = nullptr;
 
+    int listSize = 0; // stores the number of child buttons
+
     void resizeEvent(QResizeEvent*);
 
     void clearList();
-
-    void clearLayout(QLayout* layout);
+    void updateButton(CameraPushButton* button, discoveryDataPacket data);
 
 };
 

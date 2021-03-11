@@ -71,7 +71,7 @@ else()
        "src/Backend/Network/DiscoveryCommunication/discoveryCommunication.cpp"
        "src/Backend/Network/DiscoveryCommunication/discoveryCommunication.h"
        "src/Backend/Network/Sockets/udp_socket.cpp"
-       "src/Backend/Network/Sockets/udp_socket.h")
+       "src/Backend/Network/Sockets/udp_socket.h" "src/UI/miscellaneous.h" "src/UI/Custom/CameraPushButton.h")
 endif()
 
 target_link_libraries(Omegacam PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network libzmq-v142-mt-4_3_4 libzmq-v142-mt-s-4_3_4)

@@ -11,7 +11,7 @@ void discoveryCommunicationThread::start() {
 	while (isRunning) {
 
 		if (discoveryCommunication::getInstance()->getSocketConnected()) {
-			
+
 			vector<string> b;
 
 			socketbuffer s_buffer;
@@ -20,14 +20,12 @@ void discoveryCommunicationThread::start() {
 				b.push_back(string(s_buffer.buffer, s_buffer.buffer.size()));
 				//logs::stat("recv multicast - " + rawData);
 			}
-			
-			if (b.size()) {
-				backendDelegate::updateDiscoveryData(b);
-			}
+
+			backendDelegate::updateDiscoveryData(b);
 
 		}
 
-		this_thread::sleep_for(chrono::seconds(1));
+		this_thread::sleep_for(chrono::seconds(3));
 	}
 }
 
